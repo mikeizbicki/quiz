@@ -1,3 +1,6 @@
+*.outputs
+*.old
+
 ## vim
 *.swo
 *.swp

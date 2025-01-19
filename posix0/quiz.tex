@@ -27,8 +27,12 @@
     ,language=sh
     ,showstringspaces=false
     ,numbers=left
-    ,breaklines=true
+    ,breaklines=false
     }
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -68,9 +72,9 @@ Quiz Practice: POSIX Shell 1
     (2) removing/adding quotation marks.
 \end{note}
 
+\begin{samepage}
 \section{Pipes}
 
-\begin{samepage}
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -86,10 +90,17 @@ $ echo 'hola mundo' >> README
 $ echo 'salve munde' >> README
 $ cat README | grep 'hello'
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -105,10 +116,17 @@ $ echo 'hola mundo' >> README
 $ echo 'salve munde' >> README
 $ cat README | grep 'h'
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -124,10 +142,17 @@ $ echo 'hola mundo' >> README
 $ echo 'salve munde' >> README
 $ cat README | grep 'h' | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -143,10 +168,17 @@ $ echo 'hola mundo' >> README
 $ echo 'salve munde' >> README
 $ cat README | grep 'h.*a'
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -162,10 +194,17 @@ $ echo 'hola mundo' >> README
 $ echo 'salve munde' >> README
 $ cat README | grep -E 'h|a'
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -181,10 +220,17 @@ $ touch hola_mundo
 $ touch salve_munde
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-2.0-flash-thinking-exp-1219$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -200,10 +246,17 @@ $ touch hola_mundo
 $ touch salve_munde
 $ ls | grep 'h.*a' | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -219,10 +272,17 @@ $ touch hola_mundo
 $ touch salve_munde
 $ ls | grep -E 'h|a' | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-8b$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -238,10 +298,17 @@ $ touch hola mundo
 $ touch salve munde
 $ ls | grep 'h.*a' | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: &  \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -257,11 +324,18 @@ $ touch hola mundo
 $ touch salve munde
 $ ls | grep -E 'h|a' | wc -l
 \end{lstlisting}
-\end{samepage}
 
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: &  \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+\end{tabular}
+
+\end{samepage}
+\begin{samepage}
 \section{Variables}
 
-\begin{samepage}
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -276,10 +350,17 @@ $ var="hello world"
 $ touch $var
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -294,10 +375,17 @@ $ var="hello world"
 $ touch "$var"
 $ ls
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-8b$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -312,10 +400,17 @@ $ var="hello world"
 $ touch '$var'
 $ ls
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -330,10 +425,17 @@ $ var=`echo hello world`
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -348,10 +450,17 @@ $ var=$(echo hello world)
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -366,10 +475,17 @@ $ var=$(echo echo echo)
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -384,10 +500,17 @@ $ var="$(echo echo echo)"
 $ touch "$var"
 $ ls
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gpt-4o-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -402,10 +525,17 @@ $ var='$(echo echo echo)'
 $ touch "$var"
 $ ls
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -420,10 +550,17 @@ $ var=$(echo $(echo echo))
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-8b$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -438,10 +575,17 @@ $ var=$(echo '$(echo echo)')
 $ touch "$var"
 $ ls
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gpt-4$}, {\lstinline$groq-llama3.1-70b$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -456,10 +600,17 @@ $ var=$(echo $(echo $(echo)))
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: &  \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -474,10 +625,17 @@ $ var=$(echo $(echo) echo)
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o$}, {\lstinline$groq-llama3.1-8b$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -492,11 +650,18 @@ $ var=echo echo echo
 $ touch "$var"
 $ ls | wc -l
 \end{lstlisting}
-\end{samepage}
 
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: &  \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+\end{tabular}
+
+\end{samepage}
+\begin{samepage}
 \section{For Loops}
 
-\begin{samepage}
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -510,10 +675,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in a b c d e f; do touch $file; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -527,10 +699,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in 'a b' 'c d' 'e f'; do touch $file; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -544,10 +723,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in 'a b' 'c d' 'e f'; do touch "$file"; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -561,10 +747,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in 'a b' 'c d' 'e f'; do touch '$file'; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -578,10 +771,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in a b c $(echo hello world) d e f; do touch "$file"; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -595,10 +795,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in 'a b' 'c $(echo hello world) d' 'e f'; do touch "$file"; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -612,10 +819,17 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in "a b" "c $(echo hello world) d" "e f"; do touch "$file"; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$o1-mini$}, {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$} \\
+\end{tabular}
+
 \end{samepage}
-
-
 \begin{samepage}
+
 \begin{problem}
 Write the output of the final command in the following terminal session.
 Do not provide any additional information,
@@ -629,5 +843,16 @@ $ cd; rm -rf quiz; mkdir quiz; cd quiz
 $ for file in "a b" "c $(echo hello world) d" "e f"; do touch $file; done
 $ ls | wc -l
 \end{lstlisting}
+
+
+\noindent
+\begin{tabular}{p{1.0in}L{5in}}
+Passing LLMs: & {\lstinline$o1-preview$} \\
+Failing LLMs: & {\lstinline$claude-3-5-haiku-latest$}, {\lstinline$claude-3-5-sonnet-20241022$}, {\lstinline$gemini-1.5-flash-001$}, {\lstinline$gemini-1.5-flash-8b-001$}, {\lstinline$gemini-2.0-flash-exp$}, {\lstinline$gemini-2.0-flash-thinking-exp-1219$}, {\lstinline$gpt-4$}, {\lstinline$gpt-4o$}, {\lstinline$gpt-4o-mini$}, {\lstinline$groq-llama3.1-70b$}, {\lstinline$groq-llama3.1-8b$}, {\lstinline$o1-mini$} \\
+\end{tabular}
+
 \end{samepage}
+
+\section*{LLM Model Performance}
+\includegraphics{llm_scores}
 \end{document}

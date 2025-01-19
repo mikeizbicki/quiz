@@ -8,6 +8,8 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[normalem]{ulem}
 \usepackage{courier}
+\usepackage[T1]{fontenc}
+\usepackage{upquote}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -17,8 +19,10 @@
   citecolor    = blue  %Colour of citations
 }
 
-\usepackage[T1]{fontenc}
-\usepackage{upquote}
+\usepackage{accsupp}
+\newcommand{\noncopynumber}[1]{%
+    \BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}%
+}
 \usepackage{listings}
 \lstset{
     language=HTML
@@ -28,6 +32,8 @@
     ,showstringspaces=false
     ,numbers=left
     ,breaklines=false
+    ,numbers=left
+    ,numberstyle=\tiny\noncopynumber
     }
 
 \usepackage{array}
