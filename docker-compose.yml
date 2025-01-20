@@ -1,8 +1,0 @@
-services:
-  ubuntu:
-    image: ubuntu:22.04
-    volumes:
-      - .:/project
-    working_dir: /project
-    # Keep container running
-    command: tail -f /dev/null

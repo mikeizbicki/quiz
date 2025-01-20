@@ -1,0 +1,10 @@
+\begin{note}
+All programs have an exit code associated with them that indicate whether the program succeeded (exit code 0) or failed (a non-zero value).
+Success is interpreted as true within boolean expressions,
+and failure is interpreted as false.
+The \lstinline{grep} program succeeds whenever it finds a match for its regular expression in the input.
+
+Many of the shell features we've observed above are special cases of the exit code behavior.
+The \lstinline{true} and \lstinline{false} commands are actually programs that always return 0 and 1 respectively.
+The \lstinline{[} operator is just a normal executable program that interprets is command line arguments as a boolean expresson and returns 0 if the expression is true and 1 otherwise.
+\end{note}

@@ -1,1 +1,0 @@
-Glob expansion happens after the shell processes the spaces that separate the list of strings to loop over.

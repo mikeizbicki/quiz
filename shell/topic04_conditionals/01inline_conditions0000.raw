@@ -1,0 +1,7 @@
+\begin{note}
+Inline conditional statements are possible in most programming languages (including python),
+but they are particularly common in the shell.
+These statements take advantage of the \emph{short circuiting} behavior of boolean operators.
+That is, the and operator \lstinline{&&} only evaluates its second argument if the first argument is true,
+and the or operator \lstinline{||} only evaluates its second argument if the first argument is false.
+\end{note}

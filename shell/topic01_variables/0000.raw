@@ -1,0 +1,20 @@
+\begin{center}
+{
+\Large
+Shell Topic 01: Basic Variable Usage
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+Variables and quotation marks have subtle interactions in the shell,
+and these interactions are a common source of bugs.
+The dollar sign \lstinline{$} is the \emph{variable expansion operator}.
+Variables get expanded before determining the arguments to executables,
+and so if a variable has a space then it will result in multiple arguments.
+Variable expansion does not happen within single quotes \lstinline{'},
+but does happen within double quotes \lstinline{"} and backticks \lstinline{`}.
+Double quotation marks cause spaces to be ignored when determining arguments to an executable.
+Backticks cause the contents to be executed by a \emph{subshell}.
+Backticks are equivalent to the \emph{command expansion operator} \lstinline{$()}.
+\end{note}

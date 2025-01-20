@@ -1,0 +1,12 @@
+\begin{center}
+{
+\Large
+Shell Topic 04: Conditional Expressions
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+Like for loops, if statements have subtle interactions with the \lstinline{$} operator and various types of quotation marks.
+In the shell, expressions are contained within square brackets \lstinline{[ ]}, the operator \lstinline{&&} is \lstinline{and}, \lstinline{||} is \lstinline{or}, and \lstinline{!} is \lstinline{not}.
+\end{note}

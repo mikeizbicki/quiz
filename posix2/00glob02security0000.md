@@ -1,7 +1,0 @@
-Glob expansion happens in the shell,
-before the parameters are sent to the program.
-This can have unintended side effects.
-If you are working in a directory where someone else is allowed to create files,
-they can create files that will be expanded by \lstinline{*} into command line arguments.
-This problem can be mitigated by using \lstinline{./*} instead of \lstinline{*}.
-Command line arguments that appear after a \lstinline{--} will never be interpreted as command line arguments.

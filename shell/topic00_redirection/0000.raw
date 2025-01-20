@@ -1,0 +1,26 @@
+\begin{center}
+{
+\Large
+Shell Topic 00: Input/Output Redirection and Pipes
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+There are three principles of the \emph{Unix Philosophy}:
+\begin{enumerate}
+\item Write programs that do one thing and do it well.
+\item Write programs to work together.
+\item Write programs to handle text streams, because that is a universal interface.
+\end{enumerate}
+Redirection and pipes are the glue that makes the Unix philosophy work.
+\end{note}
+
+\begin{note}
+The \emph{output redirection operator} \lstinline{>} takes the output of a program and saves it to a file.
+If the file already exists, the contents are overwritten.
+The \emph{append operator} \lstinline{>>} is like \lstinline{>} but it appends instead of overwriting.
+The \emph{input redirection operator} \lstinline{<} opens a file and passes the contents as the input to a command.
+The \emph{pipe} \lstinline{|} takes the output of the previous command and sends it to the input of the subsequent command.
+\end{note}
+

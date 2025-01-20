@@ -1,0 +1,5 @@
+\begin{note}
+In python, the function \lstinline{os.getenv} is used to get the value of an environment variable.
+The first parameter is the name of the variable,
+and the second parameter is a default value to use if the environment variable has not been set.
+\end{note}

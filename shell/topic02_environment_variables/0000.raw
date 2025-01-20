@@ -1,0 +1,12 @@
+\begin{center}
+{
+\Large
+Shell Topic 02: Environment Variables
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+Environment variables are a method for passing parameters from a parent program to all of its descendants.
+They are commonly used to store sensitive information like passwords or API keys.
+\end{note}
