@@ -92,9 +92,10 @@ for problem in "$quiz"/*.sh; do
         # we work around this problem by rerunning the command multiple times,
         # and only proceeding if the output is the same
         while true; do
+            gitinit='git config --global user.email "you@example.com"; git config --global user.name "Your Name";'
             # run the ground truth in a docker container for security
-            docker run --rm -v "$(pwd)":/project python:3.12 sh -c "stdbuf -o0 -e0 sh -x /project/$problem 2>&1" | tac | sed -e '/^+/,$d' | tac > "$tempfile1" &
-            docker run --rm -v "$(pwd)":/project python:3.12 sh -c "stdbuf -o0 -e0 sh -x /project/$problem 2>&1" | tac | sed -e '/^+/,$d' | tac > "$tempfile2" &
+            docker run --rm -v "$(pwd)":/project python:3.12 sh -c "$gitinit stdbuf -o0 -e0 sh -x /project/$problem 2>&1" | tac | sed -e '/^+/,$d' | tac > "$tempfile1" &
+            docker run --rm -v "$(pwd)":/project python:3.12 sh -c "$gitinit stdbuf -o0 -e0 sh -x /project/$problem 2>&1" | tac | sed -e '/^+/,$d' | tac > "$tempfile2" &
             wait
 
             if cmp -s "$tempfile1" "$tempfile2"; then

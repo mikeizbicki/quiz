@@ -1,0 +1,7 @@
+The first four lines of every problem will always be the same.
+Variations of this problem include:
+(1) removing the \lstinline{git init} command,
+(2) removing or adding \lstinline{touch} / \lstinline{mkdir} / \lstinline{cd} commands,
+(3) changing the referenced filenames,
+and (4) adding the \lstinline{-a} flag to the final \lstinline{ls} command.
+

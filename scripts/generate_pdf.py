@@ -59,18 +59,23 @@ logging.info(f"globpattern={globpattern}")
 paths = glob.glob(globpattern)
 last_section_pattern = None
 content = []
+inside_minipage = False
 for path in sorted(paths):
     logging.info(f'path={path}')
     
-    content.append(r'\noindent\vspace{0.1in}\begin{minipage}{\textwidth}')
+    if not inside_minipage:
+        content.append(r'\noindent\vspace{0.1in}\begin{minipage}{\textwidth}')
+        inside_minipage = True
 
     # append problem information
     with open(path) as fin:
         lines = []
 
         # process raw sections
+        end_minipage = True
         if path.split('.')[-1] == 'raw':
             content.append(fin.read())
+            end_minipage = False
 
         # process scripts (i.e. problems)
         if path.split('.')[-1] == 'sh':
@@ -110,6 +115,7 @@ for path in sorted(paths):
             outputs_path = os.path.dirname(path) + '/.outputs/' + os.path.basename(path)
             logging.debug(f"outputs_path={outputs_path}")
             def normalize_text(text):
+                text = text.replace('`', '')
                 return ' '.join(sorted(text.split()))
             with open(outputs_path) as fin:
                 ground_truth = normalize_text(fin.read())
@@ -154,7 +160,9 @@ Failing LLMs: & ''' + ', '.join(latexify(fail_llms)) + r''' \\
             all_llms |= set(pass_llms)
             all_llms |= set(fail_llms)
 
-    content.append(r'\end{minipage}')
+    if end_minipage:
+        content.append(r'\end{minipage}')
+        inside_minipage = False
 
 import tempfile
 tempdir = tempfile.TemporaryDirectory()

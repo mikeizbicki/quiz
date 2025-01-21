@@ -1,0 +1,3 @@
+Variations of this problem include all the variations above,
+plus:
+adding and removing the commands \lstinline{git add}, \lstinline{git commit}, \lstinline{git branch}, or \lstinline{git checkout} at arbitrary locations.

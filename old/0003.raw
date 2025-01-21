@@ -1,0 +1,5 @@
+Variations of this problem include all the variations above,
+plus:
+(1) changing the \lstinline{python3} command to a \lstinline{cat} or \lstinline{ls} command,
+and (2) changing the type of quotation mark used at any location.
+Any python code provided will only contain simple print statements.

@@ -1,0 +1,7 @@
+Variations of this problem include all the variations above,
+plus:
+(1) changing the final command to \lstinline{cat README},
+(2) changing the name of any referenced file,
+(3) adding/removing \lstinline{echo} commands,
+and (4) changing the \lstinline{>} to \lstinline{>>} (or vice versa).
+
