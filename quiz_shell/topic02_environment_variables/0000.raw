@@ -7,6 +7,8 @@ Shell Topic 02: Environment Variables
 \end{center}
 
 \begin{note}
-Environment variables are a method for passing parameters from a parent program to all of its descendants.
+Environment variables are a special type of variable whose value gets passed to all children of the shell.
 They are commonly used to store sensitive information like passwords or API keys.
+They can be created using the \lstinline{export} keyword (which also creates a standard shell variable)
+or using \emph{command prefix notation} (which does not create a standard shell variable).
 \end{note}

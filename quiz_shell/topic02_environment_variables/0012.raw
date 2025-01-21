@@ -1,0 +1,4 @@
+\begin{note}
+Forgetting quotation marks around a variable definition is a common syntax mistake that results in accidentally using the command prefix environment variable notation.
+The results are usually quite unexpected and difficult to debug.
+\end{note}
