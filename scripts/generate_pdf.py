@@ -3,17 +3,22 @@
 Convert a folder into a pdf document.
 '''
 
-import logging
-logging.basicConfig(
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    level=logging.INFO,
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-
 import argparse
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('quizpath')
+parser.add_argument('--nographs', action='store_true')
+parser.add_argument('--verbose', action='store_true')
 args = parser.parse_args()
+
+import logging
+log_level = logging.INFO
+if args.verbose:
+    log_level = logging.DEBUG
+logging.basicConfig(
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    level=log_level,
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
 
 import os
 import subprocess
@@ -47,7 +52,7 @@ with open(prompt_path) as fin:
 from collections import Counter
 all_llms = set()
 total_problems = 0
-prompt_styles=['1shot', 're2', 'cot']
+prompt_styles=['1shot'] #, 're2', 'cot']
 passed_problems = {}
 for prompt_style in prompt_styles:
     passed_problems[prompt_style] = Counter()
@@ -121,6 +126,7 @@ for path in sorted(paths):
                 ground_truth = normalize_text(fin.read())
                 logging.debug(f"ground_truth={ground_truth}")
             for prompt_style in prompt_styles:
+                logging.debug(f"prompt_style={prompt_style}")
                 for llmpath in sorted(glob.glob(outputs_path + '.' + prompt_style + '.*')):
                     llm = llmpath.split(outputs_path + '.' + prompt_style)[-1][1:]
                     logging.debug(f"llmpath={llmpath}; llm={llm}")
@@ -168,53 +174,55 @@ import tempfile
 tempdir = tempfile.TemporaryDirectory()
 prev_cwd = os.getcwd()
 os.chdir(tempdir.name)
+logging.info(f"os.getcwd()={os.getcwd()}")
 
 # generate plot of scores
-import matplotlib.pyplot as plt
-percentages = {k: (v / total_problems) * 100 for k, v in passed_problems['1shot'].items()}
-import pprint
-pprint.pprint(percentages)
-percentages = sorted(percentages.items())
-percentages_keys = [k for (k,v) in percentages]
-percentages_values = [v for (k,v) in percentages]
-plt.barh(percentages_keys, percentages_values)
-for i, v in enumerate(percentages_values):
-    plt.text(v, i, f' {v:2.0f}', va='center', ha='left')
+if not args.nographs:
+    import matplotlib.pyplot as plt
+    percentages = {k: (v / total_problems) * 100 for k, v in passed_problems['1shot'].items()}
+    import pprint
+    pprint.pprint(percentages)
+    percentages = sorted(percentages.items())
+    percentages_keys = [k for (k,v) in percentages]
+    percentages_values = [v for (k,v) in percentages]
+    plt.barh(percentages_keys, percentages_values)
+    for i, v in enumerate(percentages_values):
+        plt.text(v, i, f' {v:2.0f}', va='center', ha='left')
 
-if False:
-    all_categories = set()
-    for key in ['re2', '1shot', 'cot']:
-        all_categories.update(passed_problems[key].keys())
-    all_categories = sorted(all_categories)
-    bar_width = 0.25
-    import numpy as np
-    y_pos = np.arange(len(all_categories))
-    for idx, key in enumerate(prompt_styles):
-        percentages = {k: (v / total_problems) * 100 for k, v in passed_problems[key].items()}
-        values = [percentages.get(cat, 0) for cat in all_categories]
-        # Plot bars with offset
-        offset = (idx - 1) * bar_width
-        bars = plt.barh(y_pos + offset, values,
-                        bar_width,
-                        #color=colors[key],
-                        label=key)
-        # Add text annotations
-        for i, v in enumerate(values):
-            if v > 0:  # Only add text for non-zero values
-                plt.text(v, i + offset, f' {v:2.0f}', va='center', ha='left')
-    plt.yticks(y_pos, all_categories)
+    if False:
+        all_categories = set()
+        for key in ['re2', '1shot', 'cot']:
+            all_categories.update(passed_problems[key].keys())
+        all_categories = sorted(all_categories)
+        bar_width = 0.25
+        import numpy as np
+        y_pos = np.arange(len(all_categories))
+        for idx, key in enumerate(prompt_styles):
+            percentages = {k: (v / total_problems) * 100 for k, v in passed_problems[key].items()}
+            values = [percentages.get(cat, 0) for cat in all_categories]
+            # Plot bars with offset
+            offset = (idx - 1) * bar_width
+            bars = plt.barh(y_pos + offset, values,
+                            bar_width,
+                            #color=colors[key],
+                            label=key)
+            # Add text annotations
+            for i, v in enumerate(values):
+                if v > 0:  # Only add text for non-zero values
+                    plt.text(v, i + offset, f' {v:2.0f}', va='center', ha='left')
+        plt.yticks(y_pos, all_categories)
 
-plt.xlabel('Score (%)')
-plt.xlim(0, 100)
-plt.tight_layout()
-width = 6
-aspect_ratio = plt.gcf().get_size_inches()[1]/plt.gcf().get_size_inches()[0]
+    plt.xlabel('Score (%)')
+    plt.xlim(0, 100)
+    plt.tight_layout()
+    width = 6
+    aspect_ratio = plt.gcf().get_size_inches()[1]/plt.gcf().get_size_inches()[0]
 #plt.figure(figsize=(width, width*aspect_ratio))
-plt.savefig('llm_scores.pdf')
-content.append(r'''
-\section*{LLM Model Performance}
-\includegraphics{llm_scores}
-''')
+    plt.savefig('llm_scores.pdf')
+    content.append(r'''
+    \section*{LLM Model Performance}
+    \includegraphics{llm_scores}
+    ''')
 
 logging.info(f"os.getcwd()={os.getcwd()}")
 output_tex_path = topicpath + '.tex'

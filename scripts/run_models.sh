@@ -31,9 +31,10 @@ export OPENBLAS_VERBOSE=0
 export OPENBLAS_WARNING_LEVEL=0
 export BLAS_VERBOSE=0
 
+#groq-llama3.1-8b
+#groq-llama3.1-70b
+#gemini-2.0-flash-thinking-exp-1219
 models="
-groq-llama3.1-8b
-groq-llama3.1-70b
 groq-llama-3.3-70b
 gpt-4
 gpt-4o
@@ -47,7 +48,6 @@ claude-3-haiku-20240307
 claude-3-5-sonnet-20241022
 claude-3-5-haiku-latest
 gemini-2.0-flash-exp
-gemini-2.0-flash-thinking-exp-1219
 gemini-1.5-flash-8b-001
 gemini-1.5-flash-001
 gemini-exp-1206
