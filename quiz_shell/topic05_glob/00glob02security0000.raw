@@ -5,5 +5,10 @@ This can have unintended side effects.
 If you are working in a directory where someone else is allowed to create files,
 they can create files that will be expanded by \lstinline{*} into command line arguments.
 This problem can be mitigated by using \lstinline{./*} instead of \lstinline{*}.
+\end{note}
+\begin{note}
+The following behavior is a non-POSIX GNU extension to the shell.
+It is widely used and very useful,
+and is the only non-POSIX syntax in this sequence of quizes.
 Command line arguments that appear after a \lstinline{--} will never be interpreted as command line arguments.
 \end{note}

@@ -1,4 +1,4 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
-var="$(echo "$(echo echo)")"
-touch "$var"
+foo="$(echo "$(echo echo)")"
+touch "$foo"
 ls | wc -l

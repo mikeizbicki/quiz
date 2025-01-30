@@ -10,7 +10,20 @@ Shell Topic 05: The Glob
 The POSIX shell has a built-in pattern matching feature for working with files.
 This is one of the most powerful features of the shell,
 but also one of the most dangerous.
-The glob operator \lstinline{*} matches zero or more of any character,
-and the question operator \lstinline{?} matches exactly one of any character.
-The \lstinline{*} and \lstinline{?} operators do not match a dot at the beginning of the file, and so do not match hidden files.
+The \emph{glob} operator \lstinline{*} matches zero or more of any character,
+the \emph{wildcard} operator \lstinline{?} matches exactly one of any character,
+and the \emph{character class} operators \lstinline{[ ]} match any character contained within the square brackets.
+There are of course some subtlties:
+\begin{enumerate}
+\item
+The behavior of \lstinline{*} and \lstinline{?} in the shell is related to the bahavior in regex, but not exactly the same.
+In regex, these two operators modify the previous expression,
+in the shell they are a command by themselves and do not modify anything.
+The shell glob and wildcard operators were invented first in the 1960s and the regex syntax was developed in the 70s and 80s.
+\item
+If the first character between the square brackets is \lstinline{^}, then the character class matches any character not contained with in the brackets.
+This behavior is the same between shell and regex.
+\item
+The glob and wildcard operators do not match a dot at the beginning of the file, and so do not match hidden files.
+\end{enumerate}
 \end{note}

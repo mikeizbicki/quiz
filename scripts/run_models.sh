@@ -36,6 +36,7 @@ export BLAS_VERBOSE=0
 #gemini-2.0-flash-thinking-exp-1219
 models="
 groq-llama-3.3-70b
+groq/deepseek-r1-distill-llama-70b
 gpt-4
 gpt-4o
 gpt-4o-mini
@@ -59,7 +60,8 @@ for problem in "$quiz"/*.sh; do
 
     # run each of the models on the problem
     for model in $models; do
-        outfile_1shot="${output}.1shot.${model}"
+        model_safename=$(echo "$model" | tr '/' '-')
+        outfile_1shot="${output}.1shot.${model_safename}"
         if ! [ -s "$outfile_1shot" ]; then
             printf "$model "
             fullprompt_1shot="$prompt $prompt_1shot $(cat "${problem}")"
