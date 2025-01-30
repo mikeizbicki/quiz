@@ -7,8 +7,9 @@ they can create files that will be expanded by \lstinline{*} into command line a
 This problem can be mitigated by using \lstinline{./*} instead of \lstinline{*}.
 \end{note}
 \begin{note}
-The following behavior is a non-POSIX GNU extension to the shell.
-It is widely used and very useful,
+This note describes a non-POSIX GNU extension to the shell.
+It is widely supported and very useful,
 and is the only non-POSIX syntax in this sequence of quizes.
-Command line arguments that appear after a \lstinline{--} will never be interpreted as command line arguments.
+Command line arguments that appear after a \lstinline{--} will always be interpreted as files.
+It is therefore safe to use the glob after \lstinline{--} and files will not be able to change the behavior of a program.
 \end{note}
