@@ -13,7 +13,7 @@ but also one of the most dangerous.
 The \emph{glob} operator \lstinline{*} matches zero or more of any character,
 the \emph{wildcard} operator \lstinline{?} matches exactly one of any character,
 and the \emph{character class} operators \lstinline{[ ]} match any character contained within the square brackets.
-There are of course some subtlties:
+There are of course some subtleties:
 \begin{enumerate}
 \item
 The behavior of \lstinline{*} and \lstinline{?} in the shell is related to the bahavior in regex, but not exactly the same.
