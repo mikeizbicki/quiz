@@ -52,6 +52,8 @@ gemini-2.0-flash-exp
 gemini-1.5-flash-8b-001
 gemini-1.5-flash-001
 gemini-exp-1206
+openrouter/deepseek/deepseek-r1:free
+openrouter/meta-llama/llama-3.1-405b-instruct
 "
 
 for problem in "$quiz"/*.sh; do

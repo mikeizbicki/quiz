@@ -1,0 +1,11 @@
+\begin{center}
+{
+\Large
+Shell Topic 06: git
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+You are responsible for understanding the effects of the following git commands: \lstinline{git add}, \lstinline{git commit -m}, \lstinline{git branch}, \lstinline{git checkout}, and \lstinline{git checkout -b}.
+\end{note}

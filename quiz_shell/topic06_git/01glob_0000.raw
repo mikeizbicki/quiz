@@ -1,0 +1,5 @@
+\begin{note}
+It is common in practice to combine git commands with other shell constructs like the glob.
+This can lead to many subtle errors (and potential security concerns when using other people's projects).
+\end{note}
+
