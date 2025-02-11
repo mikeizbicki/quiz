@@ -4,6 +4,7 @@
 ## vim
 *.swo
 *.swp
+*.swn
 
 ## python
 __pycache__

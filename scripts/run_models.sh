@@ -16,7 +16,7 @@ outputs="$quiz/.outputs"
 mkdir -p "$outputs"
 prompt=$(cat "$(dirname "$quiz")/prompt")
 prompt_1shot=$(cat "$(dirname "$quiz")/prompt_1shot")
-prompt_cot=$(cat "$(dirname "$quiz")/prompt_cot")
+#prompt_cot=$(cat "$(dirname "$quiz")/prompt_cot")
 
 # temp files will be used for making a nondeterministic call deterministic below
 tempfile1=$(mktemp)
@@ -41,8 +41,6 @@ gpt-4
 gpt-4o
 gpt-4o-mini
 gpt-4-turbo
-o1-mini
-o1-preview
 claude-3-opus-20240229
 claude-3-sonnet-20240229
 claude-3-haiku-20240307
@@ -52,11 +50,18 @@ gemini-2.0-flash-exp
 gemini-1.5-flash-8b-001
 gemini-1.5-flash-001
 gemini-exp-1206
-openrouter/deepseek/deepseek-r1:free
-openrouter/meta-llama/llama-3.1-405b-instruct
 "
+#o1-mini
+#o1-preview
+#openrouter/deepseek/deepseek-r1:free
+#openrouter/meta-llama/llama-3.1-405b-instruct
 
-for problem in "$quiz"/*.sh; do
+for problem in "$quiz"/*; do
+    extension="${problem##*.}"
+    if [ "$extension" = 'raw' ]; then
+        continue
+    fi
+
     printf "${problem} ... "
     output="$outputs"/"$(basename "$problem")"
 
@@ -96,17 +101,25 @@ for problem in "$quiz"/*.sh; do
         # we work around this problem by rerunning the command multiple times,
         # and only proceeding if the output is the same
         while true; do
-            gitinit='git config --global user.email "you@example.com"; git config --global user.name "Your Name";'
-            # run the ground truth in a docker container for security
-            docker run --rm -v "$(pwd)":/project python:3.12 sh -c "$gitinit stdbuf -o0 -e0 sh -x /project/$problem 2>&1" | tac | sed -e '/^+/,$d' | tac > "$tempfile1" &
-            docker run --rm -v "$(pwd)":/project python:3.12 sh -c "$gitinit stdbuf -o0 -e0 sh -x /project/$problem 2>&1" | tac | sed -e '/^+/,$d' | tac > "$tempfile2" &
-            wait
 
-            if cmp -s "$tempfile1" "$tempfile2"; then
-                cp "$tempfile1" "$output"
+            if [ "$extension" = "sh" ]; then
+                gitinit='git config --global user.email "you@example.com"; git config --global user.name "Your Name";'
+                cmd="$gitinit stdbuf -o0 -e0 sh -x /project/$problem 2>&1"
+                docker run --rm -v "$(pwd)":/project python:3.12 sh -c "$cmd" | tac | sed -e '/^+/,$d' | tac > "$tempfile1" &
+                docker run --rm -v "$(pwd)":/project python:3.12 sh -c "$cmd" | tac | sed -e '/^+/,$d' | tac > "$tempfile2" &
+                wait
+                if cmp -s "$tempfile1" "$tempfile2"; then
+                    cp "$tempfile1" "$output"
+                    break
+                fi
+                printf '<diff_failed> '
+            elif [ "$extension" = 'py' ]; then
+                docker run --rm -v "$(pwd)":/project python:3.12 sh -c "python3 /project/$problem" > "$output"
                 break
+            else
+                echo "unknown extension $extension"
+                exit 1
             fi
-            printf '<diff_failed> '
         done
     fi
     echo "done."

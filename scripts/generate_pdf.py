@@ -75,15 +75,20 @@ for path in sorted(paths):
     # append problem information
     with open(path) as fin:
         lines = []
+        extension = path.split('.')[-1]
 
         # process raw sections
         end_minipage = True
-        if path.split('.')[-1] == 'raw':
+        if extension == 'raw':
             content.append(fin.read())
             end_minipage = False
 
         # process scripts (i.e. problems)
-        if path.split('.')[-1] == 'sh':
+        else:
+            if extension == 'sh':
+                shellprompt = '$'
+            elif extension == 'py':
+                shellprompt = ''
             total_problems += 1
             in_heredoc = False
             for line in fin:
@@ -91,7 +96,7 @@ for path in sorted(paths):
                 if line.strip() == '':
                     continue
                 if not in_heredoc:
-                    line = '$ ' + line
+                    line = shellprompt + ' ' + line
                 lines.append(line)
                 if '<<' in line:
                     in_heredoc = True
