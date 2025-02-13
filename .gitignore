@@ -5,6 +5,8 @@
 *.swo
 *.swp
 *.swn
+*.swm
+*.sw?
 
 ## python
 __pycache__
