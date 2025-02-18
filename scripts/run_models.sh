@@ -31,8 +31,6 @@ export OPENBLAS_VERBOSE=0
 export OPENBLAS_WARNING_LEVEL=0
 export BLAS_VERBOSE=0
 
-#groq-llama3.1-8b
-#groq-llama3.1-70b
 #gemini-2.0-flash-thinking-exp-1219
 models="
 groq-llama-3.3-70b
@@ -50,11 +48,15 @@ gemini-2.0-flash-exp
 gemini-1.5-flash-8b-001
 gemini-1.5-flash-001
 gemini-exp-1206
+"
+if [ "$2" = "allmodels" ]; then
+    models="$models
 o1-mini
 o1-preview
 openrouter/deepseek/deepseek-r1:free
 openrouter/meta-llama/llama-3.1-405b-instruct
 "
+fi
 
 for problem in "$quiz"/*; do
     extension="${problem##*.}"

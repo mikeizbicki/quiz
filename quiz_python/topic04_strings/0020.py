@@ -1,0 +1,2 @@
+s = '\x48\x45\x4C\x4C\x4F'
+print('s=', s)
