@@ -116,7 +116,10 @@ for problem in "$quiz"/*; do
                 fi
                 printf '<diff_failed> '
             elif [ "$extension" = 'py' ]; then
-                docker run --rm -v "$(pwd)":/project python:3.12 sh -c "python3 /project/$problem" > "$output"
+                docker run --rm -v "$(pwd)":/project python:3.12 sh -c "python3 /project/$problem || true" > "$output" 2> "$tempfile1"
+                if [ -s "$tempfile1" ]; then
+                    tail -n1 "$tempfile1" | cut -d':' -f1 > "$output"
+                fi
                 break
             else
                 echo "unknown extension $extension"

@@ -1,0 +1,11 @@
+The following code (circle one)
+
+\vspace{0.25in}
+\hspace{0.5in}terminates without error
+\hspace{1in}throws an exception
+\hspace{1in}runs forever
+\vspace{0.25in}
+
+\noindent
+If the code terminates without error, write the output.
+If the code throws an exception, state the exception.
