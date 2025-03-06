@@ -98,11 +98,11 @@ if __name__ == '__main__':
 
     import os
     import subprocess
-    #shell_path = os.path.dirname(__file__) + '/run_models.sh'
-    #try:
-        #subprocess.check_call(['sh', shell_path, args.quizpath])
-    #except subprocess.CalledProcessError as e:
-        #raise
+    shell_path = os.path.dirname(__file__) + '/run_models.sh'
+    try:
+        subprocess.check_call(['sh', shell_path, args.quizpath])
+    except subprocess.CalledProcessError as e:
+        raise
 
     import os
     newpwd = args.quizpath + '/..'
