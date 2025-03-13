@@ -84,6 +84,7 @@ if __name__ == '__main__':
     parser.add_argument('quizpath')
     parser.add_argument('--nographs', action='store_true')
     parser.add_argument('--verbose', action='store_true')
+    parser.add_argument('--key', action='store_true')
     args = parser.parse_args()
 
     import logging
@@ -304,16 +305,17 @@ if __name__ == '__main__':
         \includegraphics{llm_scores}
         ''')
 
-    content.append('\section*{Answer Key}')
-    for i, answer in enumerate(answer_key):
-        problem = r'''
-\noindent
-\textbf{problem ''' + str(i+1) + r'''}
-\begin{lstlisting}
-''' + answer + r'''
-\end{lstlisting}
-'''
-        content.append(problem)
+    if args.key:
+        content.append(r'\section*{Answer Key}')
+        for i, answer in enumerate(answer_key):
+            problem = r'''
+    \noindent
+    \textbf{problem ''' + str(i+1) + r'''}
+    \begin{lstlisting}
+    ''' + answer + r'''
+    \end{lstlisting}
+    '''
+            content.append(problem)
 
     logging.info(f"os.getcwd()={os.getcwd()}")
     output_tex_path = topicpath + '.tex'
