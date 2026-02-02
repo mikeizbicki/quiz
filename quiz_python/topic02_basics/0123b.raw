@@ -1,0 +1,4 @@
+\begin{note}
+Truthy/falsey values commonly are used within the condition of while loops in python,
+not just for if statements.
+\end{note}

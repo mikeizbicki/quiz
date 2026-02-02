@@ -1,0 +1,9 @@
+\section{Lists}
+
+\begin{note}
+A list is the most basic container type in python.
+For this quiz, you are responsible for how to read from a list,
+but not how to modify a list.
+You are responsible for the functions sum, min, and max;
+you are also responsible for understanding list slices and list indexing.
+\end{note}

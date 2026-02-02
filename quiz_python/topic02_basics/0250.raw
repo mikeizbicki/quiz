@@ -1,0 +1,8 @@
+\section{Functions}
+
+\begin{note}
+Functions allow you to reuse the same piece of code many times.
+A common acronymn for good programming is DRY (don't repeat yourself),
+and so functions are used all the time.
+Like nested for loops, expected many problems in the future quizzes to involve functions.
+\end{note}

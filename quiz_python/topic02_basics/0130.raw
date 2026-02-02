@@ -1,0 +1,5 @@
+\begin{note}
+Nested for loops are very common with lists.
+You will need to implement many nested loops in this class,
+and you can expect a problem with nested loops on almost every quiz for the remainder of the course.
+\end{note}

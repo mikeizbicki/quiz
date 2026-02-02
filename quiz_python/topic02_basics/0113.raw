@@ -1,0 +1,3 @@
+\begin{note}
+In python, it is common to rely on "truthy" and "falsey" values rather than only the boolean values True and False.
+\end{note}

@@ -1,0 +1,8 @@
+\begin{note}
+For loops are much more common in python (and most other programming languages) because they are easier to reason about.
+Everything that a for loop can do, a while loop can also do.
+But a while loop can do things that for loops can't (like loop forever).
+It is considered good style to use for loops whenever possible.
+The hardest part about for loops is understanding the range function,
+which is commonly used with for loops.
+\end{note}
