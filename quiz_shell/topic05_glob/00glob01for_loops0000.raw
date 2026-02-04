@@ -1,3 +1,3 @@
 \begin{note}
-Glob expansion happens after the shell processes the spaces that separate the list of strings to loop over.
+The glob implicitly places quotation marks around all of the file names it expands into, so tokenization happens ``the right way".
 \end{note}

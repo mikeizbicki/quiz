@@ -1,15 +1,16 @@
 \begin{note}
 Glob expansion happens in the shell,
 before the parameters are sent to the program.
-This can have unintended side effects.
+This can have unintended security-related side effects.
 If you are working in a directory where someone else is allowed to create files,
 they can create files that will be expanded by \lstinline{*} into command line arguments.
-This problem can be mitigated by using \lstinline{./*} instead of \lstinline{*}.
-\end{note}
-\begin{note}
-This note describes a non-POSIX GNU extension to the shell.
-It is widely supported and very useful,
-and is the only non-POSIX syntax in this sequence of quizes.
-Command line arguments that appear after a \lstinline{--} will always be interpreted as files.
-It is therefore safe to use the glob after \lstinline{--} and files will not be able to change the behavior of a program.
+This problem can be mitigated by:
+\begin{enumerate}
+\item Using \lstinline{./*} instead of \lstinline{*}.
+    The former will prepend \lstinline{./} to all filenames,
+    and so these files are unlikely to be interpretted as command line arguments.
+\item Using \lstinline{--} before any glob operations.
+    It is customary for commands to interpret all arguments after \lstinline{--} as filenames,
+    and so it is safe to use the glob after \lstinline{--}.
+\end{enumerate}
 \end{note}
