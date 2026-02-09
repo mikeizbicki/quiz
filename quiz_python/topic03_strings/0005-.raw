@@ -1,0 +1,5 @@
+\begin{note}
+Python strings support a number of methods that lists do not support.
+It is important to remember that strings are \emph{immutable},
+and so methods will never change the content of a string.
+\end{note}

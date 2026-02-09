@@ -1,0 +1,5 @@
+\section{Basic String Operations}
+\begin{note}
+Indexing and slicing of strings works similarly to indexing and slicing of lists.
+The main difference is that the \emph{type} of the result when indexing/slicing a string is always another string.
+\end{note}

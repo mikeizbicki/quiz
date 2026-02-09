@@ -1,0 +1,11 @@
+\begin{note}
+Strings are represented internally as binary numbers (i.e. 1s and 0s).
+Special conversion tables are used to map these binary numbers into semantically meaningful strings.
+The process of going from strings to numbers is called \emph{encoding} and the process of going from numbers to strings is called \emph{decoding}.
+You are responsible for understanding:
+\begin{enumerate}
+\item ASCII encoding/decoding,
+\item the difference between \emph{alphabetical} ordering and \emph{ASCIIbetical} ordering, and
+\item basic binary/octal/hexadecimal math.
+\end{enumerate}
+\end{note}

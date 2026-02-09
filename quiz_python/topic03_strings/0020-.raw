@@ -1,0 +1,13 @@
+\begin{note}
+Escape codes let us enter hard-to-type characters into strings.
+The special character \lstinline{\} (backslash) is used to begin an escape code.
+In python, there are four methods of entering ``strings'' that handle escape codes differently:
+\begin{enumerate}
+\item normal strings \lstinline{'...'}
+\item r-strings \lstinline{r'...'}
+\item f-strings \lstinline{f'...'}
+\item bytes \lstinline{b'...'}
+\end{enumerate}
+In the problems below, I will only write normal strings for brevity.
+But you should be able to solve the problems for any type of string.
+\end{note}

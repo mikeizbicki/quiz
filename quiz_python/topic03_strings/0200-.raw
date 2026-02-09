@@ -1,0 +1,8 @@
+\section{Manipulating Markdown}
+\begin{note}
+The following problems are designed to get you practice for you markdown compiler assignment.
+They contain a combination of correct and incorrect implementations for functions that are needed for that assignment.
+
+Recall that \emph{reading} is generally easier than \emph{writing},
+and so I strongly recommend that you work through these functions before beginning the coding of your markdown compiler assignment.
+\end{note}
