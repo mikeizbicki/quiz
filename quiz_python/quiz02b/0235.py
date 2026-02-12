@@ -1,7 +1,7 @@
 xss = [[1, 3, 5], [2, 4], [0, 1, 2, 3, 4, 5]]
 total = 0
 for xs in xss:
-    for i in range(len(xs)):
-        total += xs[i]
     total += xs[0]
+    for x in xs:
+        total += x
 print('total=', total)
