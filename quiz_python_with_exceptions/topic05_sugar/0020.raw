@@ -1,0 +1,8 @@
+\section{Comprehensions}
+
+\begin{note}
+Any list or dictionary that contains the keyword \lstinline{for} inside of it is a \emph{comprehension}.
+It is very easy to get \lstinline{IndexError}s or \lstinline{TypeError}s inside a list comprehension,
+and the error messages can be hard to debug.
+(Expect me to try to trick you on the quiz this way...)
+\end{note}

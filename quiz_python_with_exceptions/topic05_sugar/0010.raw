@@ -1,0 +1,23 @@
+\section{Special Functions}
+\begin{note}
+There are a number of special built-in functions for making iterating over containers more convenient.
+\begin{enumerate}
+\item The \lstinline{zip} function combines two or more containers into a single container whose elements are tuples that contain the values of the original containers.
+\begin{lstlisting}
+>>> list(zip('hello', 'world'))
+[('h', 'w'), ('e', 'o'), ('l', 'r'), ('l', 'l'), ('o', 'd')]
+>>> list(zip('hello', 'world', 'hola', 'mundo'))
+[('h', 'w', 'h', 'm'), ('e', 'o', 'o', 'u'), ('l', 'r', 'l', 'n'), ('l', 'l', 'a', 'd')]
+>>> list(zip(range(1000), 'world'))
+[(0, 'w'), (1, 'o'), (2, 'r'), (3, 'l'), (4, 'd')]
+\end{lstlisting}
+\item The \emph{enumerate} function creates a new container whose entries are tuples with position 0 equal to the index, and position 1 equal to the value in the original container. It is like doing a zip + range.
+\begin{lstlisting}
+>>> list(enumerate('hello'))
+[(0, 'h'), (1, 'e'), (2, 'l'), (3, 'l'), (4, 'o')]
+>>> enumerate('hello')
+<enumerate object at 0x7f4521f6c220>
+\end{lstlisting}
+(Notice that I am using the \lstinline{list} function above only to convert the enumerate type into a list type for display.)
+\end{enumerate}
+\end{note}

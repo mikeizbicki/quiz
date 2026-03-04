@@ -1,0 +1,31 @@
+\begin{center}
+{
+\Large
+Python Syntactic Sugar
+}
+\vspace{0.1in}
+\end{center}
+
+
+
+\begin{note}
+Syntactic sugar is a way for programming languages to make certain common operations more convenient.
+Python is famous for having a lot of syntactic sugar that can making learning the language hard.
+All of the ``idioms'' you will find in this packet do not allow you to write ``more powerful'' programs,
+but they will allow you to write programs that have fewer lines of code to accomplish the same task.
+
+You will never be required in this class to use any particular syntactic sugar to accomplish a task.
+But these idioms are very widely used in python,
+and so you need to understand them in order to understand the code that other people (or AIs) write.
+\end{note}
+
+\section{Pattern Matching}
+
+\begin{note}
+We can place containers on the left hand side of an equals sign as long as:
+\begin{enumerate}
+\item every element in the container is a variable (\lstinline{SyntaxError} if violated),
+\item the right hand side of the equals is a container (\lstinline{TypeError} if violated),
+\item both containers have the exact same size (\lstinline{ValueError} if violated).
+\end{enumerate}
+\end{note}

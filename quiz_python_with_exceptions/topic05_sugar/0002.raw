@@ -1,0 +1,5 @@
+\begin{note}
+Recall that in python, if you have commas separating values without square brackets [] or curly braces \{\}, then this creates a \emph{tuple}.
+(Tuples behave like immutable lists.)
+A common use case for tuples is pattern matching.
+\end{note}
