@@ -1,1 +1,8 @@
-Do not provide any additional information or explanations.
+Note that the format for your answer is very important for the grading script,
+and if you slightly misformat your answer, you will not get credit.
+Since you cannot circle anything in your output, you will not be indicating whether the program terminates without error or has an exception.
+Instead, you should only answer the second part of the question.
+That is:
+- If the program terminates without error, then only write the output.
+- If the program throws an exception, then only write the name of the exception.
+

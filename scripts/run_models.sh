@@ -34,20 +34,19 @@ export BLAS_VERBOSE=0
 #gemini-2.0-flash-thinking-exp-1219
 models="
 groq-llama-3.3-70b
+gpt-5.1
+gpt-5.2
+o3
+o3-mini
+anthropic/claude-opus-4-0
+anthropic/claude-opus-4-1-20250805
+anthropic/claude-opus-4-5-20251101
+openrouter/google/gemini-3-pro-preview
+openrouter/google/gemini-3-flash-preview
+openrouter/google/gemini-2.5-pro
+openrouter/x-ai/grok-code-fast-1
+openrouter/x-ai/grok-4
 "
-#gpt-5.1
-#gpt-5.2
-#o3
-#o3-mini
-#anthropic/claude-opus-4-0
-#anthropic/claude-opus-4-1-20250805
-#anthropic/claude-opus-4-5-20251101
-#openrouter/google/gemini-3-pro-preview
-#openrouter/google/gemini-3-flash-preview
-#openrouter/google/gemini-2.5-pro
-#openrouter/x-ai/grok-code-fast-1
-#openrouter/x-ai/grok-4
-#"
 if [ "$2" = "allmodels" ]; then
     models="$models
 o1-mini
@@ -72,7 +71,7 @@ for problem in "$quiz"/*; do
         outfile_1shot="${output}.1shot.${model_safename}"
         if ! [ -s "$outfile_1shot" ]; then
             printf "$model "
-            fullprompt_1shot="$prompt $prompt_1shot $(cat "${problem}")"
+            fullprompt_1shot="<human_instructions>$prompt</human_instructions> <response_format>$prompt_1shot<response_format> <problem>$(cat "${problem}")</problem>"
             llm "$fullprompt_1shot" -m "$model" > "$outfile_1shot" &
         fi
 
