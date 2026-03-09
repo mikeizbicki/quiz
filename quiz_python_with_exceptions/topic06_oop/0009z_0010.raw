@@ -1,0 +1,13 @@
+\subsection{Reversing a List}
+
+\begin{note}
+The following problems illustrate different ways that you might try to reverse a list in python.
+At first glance, they all look the same.
+Due to memory management issues, however, they are not all correct.
+Understanding memory management is important when tracking down these subtle bugs,
+and you are guaranteed to run into these situations in later assignments in this course.
+
+Writing a function that reverses a list is one of the classic interview questions for python programming jobs.
+Interviewers frequently say that they are shocked by the number of interviewees who fail these questions because they don't understand memory management.
+Pay special attention to these problems so that you do not fail future interview questions and can get a great job.
+\end{note}

@@ -1,0 +1,5 @@
+\subsection{Circular References}
+
+\begin{note}
+Things get really weird when lists contain themselves.
+\end{note}

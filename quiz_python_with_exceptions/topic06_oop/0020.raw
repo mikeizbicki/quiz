@@ -1,0 +1,6 @@
+\section{Constructors}
+
+\begin{note}
+The \lstinline{__init__} function is called the \emph{constructor} for the class.
+It is called automatically for us when an object is created.
+\end{note}

@@ -1,0 +1,10 @@
+\subsection{Default Arguments}
+\begin{note}
+Variables that are parameters to a function are always local variables.
+If a default value is provided, then the behavior depends on the type of the value.
+For \emph{primitive} types (int, float, string, bool),
+the value can never change.
+For all other types, the object that the variable references is created once when the function is first defined.
+All subsequent calls to the function will use the same object,
+and the changes to the object will persist.
+\end{note}

@@ -1,0 +1,7 @@
+\subsection{Built-in methods}
+
+\begin{note}
+You absolutely must know which built-in functions make copies and which do not.
+The way to remember is that any function of the form \emph{XXXed} (i.e. past tense of verb XXX) returns a copy of the result that has been XXXed.
+Any function that is a method (i.e. appears to the right of a dot) modifies the object (the variable to the left of the dot) in place.
+\end{note}
