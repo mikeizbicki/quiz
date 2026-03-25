@@ -1,0 +1,13 @@
+\section{Version control with git}
+
+\begin{note}
+\lstinline{git} is a \emph{version control system}.
+It lets us track different versions of our files,
+and ``travel back in time'' to old versions if we need to.
+\lstinline{git} is especially useful for facilitating collaboration between mnay humans (or AIs).
+A good understanding of \lstinline{git} is necessary for getting a good industry job.
+\end{note}
+
+\begin{note}
+You will not be able to undestand the problems in this section of the quiz if you have not mastered the git tutorial at \url{https://github.com/mikeizbicki/pullrequest-tutorial/}.
+\end{note}

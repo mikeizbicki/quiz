@@ -1,0 +1,13 @@
+\section{Getting Arguments into Python}
+
+\begin{note}
+The python \lstinline{argparse} library is a high-level interface for getting command line arugments into python.
+This library is a wrapper around the lower-level \lstinline{sys.argv} list that contains the raw, literal values passed in.
+The first value is always the name of the program being run,
+and then the remaining values are the arguments.
+\end{note}
+\begin{note}
+Quotation marks are handled by the shell, and not by the program.
+Therefore putting quotation marks around the parameters to a program can affect the number of parameters that the program sees.
+Also notice that the program never observes the type of quotation marks used.
+\end{note}

@@ -1,0 +1,5 @@
+\begin{note}
+Recall that the \lstinline{touch} command (for each parameter that gets passed in) creates a new file if the file does not already exist, or updates the ``modified timestamp" for files that already exist.
+Based on your understanding of command line parameters and quotation marks above,
+the problems below should make sense.
+\end{note}

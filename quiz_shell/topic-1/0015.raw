@@ -1,0 +1,8 @@
+\begin{note}
+The \lstinline{<<} operator creates a \emph{heredoc}.
+This operators allows you to define a document ``right here'' in the shell (i.e. without creating the document on disk) to be passed to the command as input.
+The \lstinline{<<} operator is immediately followed by a string,
+and the heredoc is terminated when the exact same string appears on a line by itself.
+EOF (end of file) is the traditional choice of string,
+but other strings are also valid.
+\end{note}

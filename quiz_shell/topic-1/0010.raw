@@ -1,0 +1,6 @@
+\section{Python in the Shell}
+
+\begin{note}
+It is common to use one programming language to write the code of another programming langauge.
+Here are some examples of using the shell to write python.
+\end{note}

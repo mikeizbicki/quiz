@@ -1,0 +1,9 @@
+\begin{note}
+Environment variables are another popular way for passing information to a python program.
+They are commonly used for passwords, API keys, and other sensative information.
+In the shell, they are created with the \lstinline{export} keyword.
+There must not be any spaces around the equals sign \lstinline{=}.
+In python, the function \lstinline{os.getenv} is used to get the value of an environment variable.
+The first parameter is the name of the variable, and the second parameter is a default value to use if the environment variable has not been set.
+\end{note}
+

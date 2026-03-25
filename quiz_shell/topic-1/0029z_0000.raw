@@ -1,0 +1,11 @@
+\section{Hidden Files and Folders}
+
+\begin{note}
+In Unix, any file beginning with a dot are hidden files.
+It is common to place configuration settings in these hidden files.
+Every folder contains two special hidden files \lstinline{.} (which refers to the current folder) and \lstinline{..} (which refers to the parent folder).
+\end{note}
+
+\begin{note}
+The \lstinline{ls} command can take an optional argument \lstinline{-a} to list hidden files.  It can also take an argument specifying the folder to list files inside of.
+\end{note}

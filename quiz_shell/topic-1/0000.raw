@@ -1,0 +1,34 @@
+\begin{center}
+{
+\Large
+Intro to the Unix Shell
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+The Unix shell was invented in the early 1970s.
+It is the oldest programming language still in wide use today.
+It is the ``glue'' we use to connect all of our python programs together.
+\end{note}
+
+\begin{note}
+There are three principles of the \emph{Unix Philosophy}:
+\begin{enumerate}
+\item Write programs that do one thing and do it well.
+\item Write programs to work together.
+\item Write programs to handle text streams, because text is a universal interface.
+\end{enumerate}
+\end{note}
+
+\section{Connecting Programs}
+
+\begin{note}
+The \emph{output redirection operator} \lstinline{>} takes the output of a program and saves it to a file.
+If the file already exists, the contents are overwritten.
+The \emph{append operator} \lstinline{>>} is like \lstinline{>} but it appends instead of overwriting.
+The \emph{input redirection operator} \lstinline{<} opens a file and passes the contents as the input to a command.
+The \emph{pipe} \lstinline{|} takes the output of the previous command and sends it to the input of the subsequent command.
+The \emph{semicolon} \lstinline{;} is used to separate multiple commands on the same line.
+\end{note}
+
