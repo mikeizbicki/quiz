@@ -1,0 +1,47 @@
+\section{Regex}
+
+\begin{note}
+Regular expressions (regex) closely related to the glob:
+\begin{enumerate}
+\item
+The glob is generally used for finding files based on their \emph{name},
+and regex is used for finding files based on their \emph{contents}.
+\item
+Regex has a syntax similar to he glob,
+but the semantics is slightly different.
+It is easy to get them confused, so pay attention!
+\end{enumerate}
+You are responsible for the following regex syntax:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Pattern & Matches \\
+\midrule
+\texttt{.} & exactly one character \\
+\texttt{*} & zero or more of preceding element \\
+\texttt{+} & one or more of preceding element \\
+\texttt{?} & zero or one of preceding element \\
+\texttt{[abc]} & one character in the set \\
+\texttt{[\textasciicircum abc]} & one character not in the set \\
+\texttt{\textasciicircum} & start of string \\
+\texttt{\$} & end of string \\
+\texttt{(a|b)} & alternation (a or b) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{note}
+
+\begin{note}
+For space reasons, I am giving you a very limited set of regex/glob patterns below.
+You should try creating your own problems with your own regex/glob patterns to check your understanding.
+This is another example of me trying to get you to learn-how-to-learn.
+\end{note}
+
+\subsection{In the shell}
+
+\begin{note}
+The shell program for using regex is called \texttt{grep}.
+It is so commonly used that programmers often say we are ``grepping'' for something whenever we are ``searching'' for something
+(similar to how muggles will often say they are ``googling'' something even if they are using another search engine like bing, baidu, or yandex.
+\end{note}

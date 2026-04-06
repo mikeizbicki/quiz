@@ -1,0 +1,8 @@
+\subsection{Within Python}
+\begin{note}
+Python has a built-in module \texttt{re} for working with regex.
+The function \texttt{re.search} returns \texttt{True} if the input \texttt{str} matches the regex,
+otherwise returns \texttt{False}.
+It is customary (but not required) in python to use \emph{raw-strings} to define regex.
+(Recall that raw string literals are prefixed with the letter \texttt{r} like \texttt{r'...'} and that the backslash escape characters like \lstinline{\n} are not interpreted inside of rawstrings.)
+\end{note}

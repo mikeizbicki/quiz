@@ -1,0 +1,13 @@
+\subsection{With Python}
+
+\begin{note}
+Python has a built-in module \texttt{glob} for globbing.
+The function \texttt{glob.glob} returns a list of all paths that match the glob expression.
+\end{note}
+
+\begin{note}
+The problems below are identical to problems in the previous section,
+except that a python file \texttt{example.py} is created and the glob calculated inside this file.
+DO NOT FORGET THAT THE \texttt{example.py} FILE MIGHT MATCH THE GLOB PATTERNS!
+\end{note}
+

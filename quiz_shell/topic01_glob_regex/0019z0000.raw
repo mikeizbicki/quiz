@@ -1,0 +1,4 @@
+\begin{note}
+Recall that we are not required to use the \texttt{glob} module within python in order to match filenames.
+This happens at the shell-level, and so all programs that accept arguments get this ability.
+\end{note}

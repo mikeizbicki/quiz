@@ -1,0 +1,45 @@
+\begin{center}
+{
+\Large
+The Glob and Regular Expressions
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+In this notes packet, you will learn two new \emph{query programming languages}: the Glob and Regular Expressions (regex).
+These languages are similar to CSS Selectors in that:
+(1) they are used to "find" information inside another filetype;
+(2) they are commonly used from within other languages.
+\end{note}
+
+\section{Glob}
+
+\begin{note}
+The glob is used for creating a "list" of files that match a particular pattern.
+You are responsible for the following syntax:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Pattern & Matches \\
+\midrule
+\texttt{*} & any string (including empty) \\
+\texttt{?} & exactly one character \\
+\texttt{[abc]} & one character in the set \\
+\texttt{[\textasciicircum abc]} & one character not in the set \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{note}
+
+\subsection{With the Shell}
+
+\begin{note}
+The glob is always applied to any arguments that are passed into a program.
+\end{note}
+
+\begin{note}
+Anytime we write code that uses the glob, we say we are \emph{globbing}.
+\end{note}
+
