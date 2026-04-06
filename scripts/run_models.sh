@@ -32,6 +32,7 @@ export OPENBLAS_WARNING_LEVEL=0
 export BLAS_VERBOSE=0
 
 #gemini-2.0-flash-thinking-exp-1219
+#openrouter/google/gemini-3-pro-preview
 models="
 groq-llama-3.3-70b
 gpt-5.1
@@ -41,7 +42,6 @@ o3-mini
 anthropic/claude-opus-4-0
 anthropic/claude-opus-4-1-20250805
 anthropic/claude-opus-4-5-20251101
-openrouter/google/gemini-3-pro-preview
 openrouter/google/gemini-3-flash-preview
 openrouter/google/gemini-2.5-pro
 openrouter/x-ai/grok-code-fast-1
