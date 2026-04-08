@@ -24,17 +24,20 @@
 \newcommand{\noncopynumber}[1]{%
     \BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}%
 }
+\usepackage{fvextra}
+%\usepackage{minted}
 \usepackage{listings}
 \lstset{
-    language=HTML
+    language=sh
     ,basicstyle=\linespread{1}\ttfamily
     ,keywordstyle=
-    ,language=sh
     ,showstringspaces=false
     ,numbers=left
     ,breaklines=false
     ,numbers=left
     ,numberstyle=\tiny\noncopynumber
+    ,keepspaces=true
+    ,columns=fullflexible
     }
 
 \usepackage{array}
