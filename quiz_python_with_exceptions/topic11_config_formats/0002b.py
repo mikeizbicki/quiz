@@ -23,5 +23,24 @@ YAML Web Sites:
 '''
 data = yaml.safe_load(contents)
 
-a = len(data['YAML Specifications'])
-print('a=', a)
+b = len(data['YAML Specifications']['YAML 1.2'])
+print('b=', b)
+
+c = len(data['YAML Specifications'][0])
+print('c=', c)
+
+d = len(data['YAML Specifications'][0]['YAML 1.2'])
+print('d=', d)
+
+e = len(data['YAML Web Sites'][0])
+print('e=', e)
+
+f = len(data['YAML Web Sites']['The YAML Company'])
+print('f=', f)
+
+g = data['YAML on GitHub']['YAML Specs'][0]
+print('g=', g)
+
+h = data['What It Is'].split('\n')
+print('h=', h)
+

@@ -1,7 +1,7 @@
 \section{YAML}
 
 \begin{note}
-TOML stands for \emph{Yaml Ain't a Markup Language}.
+YAML stands for \emph{Yaml Ain't a Markup Language}.
 Python does not have built-in support for YAML;
 you need to pip install the \lstinline{PyYAML} package,
 and then import the \lstinline{yaml} module.

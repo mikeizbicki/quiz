@@ -171,8 +171,8 @@ if __name__ == '__main__':
                 in_heredoc = False
                 for line in fin:
                     line = line[:-1]
-                    if line.strip() == '':
-                        continue
+                    #if line.strip() == '':
+                        #continue
                     if not in_heredoc:
                         line = shellprompt + ' ' + line
                     lines.append(line)

@@ -20,8 +20,38 @@ YAML Web Sites:
   YAML Information:   yaml.info         # Learn about YAML!
   YAML Test Matrix:   matrix.yaml.info  # Compare YAMLs!
   Program in YAML:    yamlscript.org    # Code is Data!
+
+YAML Matrix Chat:  '#chat:yaml.io'
+YAML IRC Channel:  libera.chat#yaml
+
+YAML on GitHub:    # github.com/yaml/
+  YAML Test Suite:    yaml-test-suite/
+  YAML Specs:         yaml-spec/
+  YAML 1.2 Grammar:   yaml-grammar/
+  YAML Test Suite:    yaml-test-suite/
 '''
 data = yaml.safe_load(contents)
 
 a = len(data['YAML Specifications'])
 print('a=', a)
+
+b = len(data['YAML Specifications']['YAML 1.2'])
+print('b=', b)
+
+c = len(data['YAML Specifications'][0])
+print('c=', c)
+
+d = len(data['YAML Specifications'][0]['YAML 1.2'])
+print('d=', d)
+
+e = len(data['YAML on GitHub'][0])
+print('e=', e)
+
+f = len(data['YAML on GitHub']['YAML Specs'])
+print('f=', f)
+
+g = data['YAML on GitHub']['YAML Specs'][0]
+print('g=', g)
+
+h = data['What It Is'].split('\n')
+print('h=', h)
