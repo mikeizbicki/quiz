@@ -1,0 +1,8 @@
+\section{TOML}
+
+\begin{note}
+TOML stands for \emph{Tom's Obvious Minimal Language}.
+Python has built-in support for TOML with the \lstinline{tomllib} library.
+You can find the full documentation of TOML at \url{https://toml.io}.
+\end{note}
+

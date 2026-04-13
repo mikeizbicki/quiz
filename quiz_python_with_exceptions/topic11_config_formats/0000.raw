@@ -1,0 +1,13 @@
+\begin{center}
+{
+\Large
+Languages Isomorphic to JSON
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+In mathematics, the word \emph{isomorphic} means that two objects are ``the same in every meaningful way.''
+(In greek, \emph{iso} means ``same'' and \emph{morph} means ``shape''.)
+In programming, we call two languages isomorphic if they can be easily converted back and forth between each other without any loss of meaning.
+\end{note}
