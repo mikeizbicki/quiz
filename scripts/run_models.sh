@@ -35,13 +35,15 @@ export BLAS_VERBOSE=0
 #openrouter/google/gemini-3-pro-preview
 models="
 groq-llama-3.3-70b
-gpt-5.1
-gpt-5.2
+groq-qwen
+gpt-6-astra
+gpt-5.6-sol
+gpt-5.6-terra
+gpt-5.6-luna
 o3
 o3-mini
-anthropic/claude-opus-4-0
-anthropic/claude-opus-4-1-20250805
-anthropic/claude-opus-4-5-20251101
+anthropic/claude-fable-5
+anthropic/claude-opus-5
 openrouter/google/gemini-3-flash-preview
 openrouter/google/gemini-2.5-pro
 openrouter/x-ai/grok-code-fast-1
@@ -72,20 +74,20 @@ for problem in "$quiz"/*; do
         if ! [ -s "$outfile_1shot" ]; then
             printf "$model "
             fullprompt_1shot="<human_instructions>$prompt</human_instructions> <response_format>$prompt_1shot<response_format> <problem>$(cat "${problem}")</problem>"
-            llm "$fullprompt_1shot" -m "$model" > "$outfile_1shot" &
+            llm -o max_tokens 100 "$fullprompt_1shot" -m "$model" > "$outfile_1shot" &
         fi
 
         if false; then
             outfile_re2="${output}.re2.${model}"
             if ! [ -s "$outfile_re2" ]; then
                 fullprompt_re2="$fullprompt_1shot Let's reread the question. $fullprompt_1shot"
-                llm "$fullprompt_re2" -m "$model" > "$outfile_re2" &
+                llm -o max_tokens 100 "$fullprompt_re2" -m "$model" > "$outfile_re2" &
             fi
 
             outfile_cot="${output}.cot.${model}"
             if ! [ -s "$outfile_cot" ]; then
                 fullprompt_cot="$prompt $prompt_cot $(cat "${problem}")"
-                llm "$fullprompt_cot" -m "$model" > "$outfile_cot" &
+                llm -o max_tokens 100 "$fullprompt_cot" -m "$model" > "$outfile_cot" &
             fi
         fi
     done
