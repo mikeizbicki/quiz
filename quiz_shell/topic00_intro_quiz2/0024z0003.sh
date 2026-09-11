@@ -4,4 +4,4 @@ import sys
 num_args = len(sys.argv)
 print("num_args=", num_args)
 EOF
-python3 example.py 'hello world' $(echo hola mundo) "echo salve munde"
+python3 example.py 'hello world' hola mundo "echo salve munde"
