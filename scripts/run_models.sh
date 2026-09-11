@@ -33,6 +33,10 @@ export BLAS_VERBOSE=0
 
 #gemini-2.0-flash-thinking-exp-1219
 #openrouter/google/gemini-3-pro-preview
+#openrouter/google/gemini-3-flash-preview
+#openrouter/google/gemini-2.5-pro
+#openrouter/x-ai/grok-code-fast-1
+#openrouter/x-ai/grok-4
 models="
 groq-llama-3.3-70b
 groq-qwen
@@ -44,10 +48,6 @@ o3
 o3-mini
 anthropic/claude-fable-5
 anthropic/claude-opus-5
-openrouter/google/gemini-3-flash-preview
-openrouter/google/gemini-2.5-pro
-openrouter/x-ai/grok-code-fast-1
-openrouter/x-ai/grok-4
 "
 if [ "$2" = "allmodels" ]; then
     models="$models
