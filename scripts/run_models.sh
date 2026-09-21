@@ -37,17 +37,23 @@ export BLAS_VERBOSE=0
 #openrouter/google/gemini-2.5-pro
 #openrouter/x-ai/grok-code-fast-1
 #openrouter/x-ai/grok-4
+#groq-llama-3.3-70b
+#o3
+#o3-mini
 models="
-groq-llama-3.3-70b
 groq-qwen
 gpt-6-astra
 gpt-5.6-sol
 gpt-5.6-terra
 gpt-5.6-luna
-o3
-o3-mini
+anthropic/claude-fable-5-1
 anthropic/claude-fable-5
 anthropic/claude-opus-5
+anthropic/claude-opus-4-6
+anthropic/claude-sonnet-4-6
+anthropic/claude-opus-4-7
+anthropic/claude-opus-4-8
+anthropic/claude-sonnet-5
 "
 if [ "$2" = "allmodels" ]; then
     models="$models

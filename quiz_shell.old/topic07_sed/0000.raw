@@ -7,26 +7,11 @@ Shell Topic 07: sed
 \end{center}
 
 \begin{note}
-The \lstinline{sed} (\emph{stream editor}) program reads a text stream line by line,
-applies an editing script to each line,
-and writes the result to standard output.
-Because it reads stdin and writes stdout,
-it composes with the redirection and pipe operators from Topic 00.
-
-The most common sed command is \emph{substitution} \lstinline{s/REGEX/REPLACEMENT/FLAGS}.
-By default, substitution replaces only the \emph{first} match on each line.
-The \lstinline{g} (global) flag replaces \emph{every} match on each line.
-Notice that \lstinline{g} does not mean ``every line'';
-sed always visits every line, and \lstinline{g} only controls behavior within a line.
-
+The \lstinline{sed} (\emph{stream editor}) edits files line-by-line.
+The most common \lstinline{sed} command is \emph{substitution} \lstinline{s/REGEX/REPLACEMENT/FLAGS}.
+By default, substitution replaces only the first match on each line.
+The \lstinline{g} (global) flag replaces every match on each line.
 The \lstinline{/} in \lstinline{s/a/b/} is not special.
 Sed uses whatever character immediately follows the \lstinline{s} as the delimiter.
 Therefore \lstinline{s;a;b;}, \lstinline{s|a|b|}, and \lstinline{s,a,b,} are all equivalent to \lstinline{s/a/b/}.
-This is extremely useful when the regex or replacement contains slashes,
-as is the case when rewriting file paths.
-The expression
-\lstinline{s/\/usr\/local/\/opt/}
-is often called \emph{leaning toothpick syndrome},
-and the identical but far more readable expression is
-\lstinline{s;/usr/local;/opt;}.
 \end{note}

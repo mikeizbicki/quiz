@@ -1,27 +1,9 @@
 \begin{note}
-Sed scripts are just ordinary shell words,
-and so all of the quoting rules from Topic 01 apply to them.
+\lstinline{sed} scripts are ordinary shell words.
 This creates a notorious source of bugs because the characters
 \lstinline{$} and \lstinline{^} mean different things to the shell and to sed.
-
 To sed, \lstinline{^} matches the beginning of a line and \lstinline{$} matches the end of a line.
 To the shell, \lstinline{$} is the variable expansion operator.
 The shell expands variables inside double quotes \lstinline{"} but not inside single quotes \lstinline{'}.
-Therefore:
-\begin{enumerate}
-\item
-\lstinline{sed 's/hello$/x/'} anchors the match to the end of the line,
-because the shell passes \lstinline{$} through untouched.
-\item
-\lstinline{sed "s/hello$/x/"} also anchors to the end of the line,
-but only because \lstinline{$/} is not a valid variable name so the shell leaves the \lstinline{$} alone.
-This is a dangerous accident, not a guarantee.
-\item
-\lstinline{sed "s/$foo/x/"} substitutes the value of the shell variable \lstinline{foo} into the regex.
-\item
-\lstinline{sed 's/$foo/x/'} matches the four literal characters \lstinline{$foo} is \emph{not} what happens;
-in a POSIX basic regular expression, \lstinline{$} is only an anchor at the very end of the regex,
-and so it is treated as the literal character \lstinline{$} followed by \lstinline{foo}.
-\end{enumerate}
-The \lstinline{^} character is never special to the shell, so it behaves identically inside both quote types.
+Recall that the shell does not exapand the variable expansion operator \lstinline{$} when it is preceded by a backslash \lstinline{\} or is not followed by a letter/number.
 \end{note}
