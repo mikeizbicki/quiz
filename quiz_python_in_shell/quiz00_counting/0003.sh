@@ -1,0 +1,15 @@
+cd; rm -rf quiz; mkdir quiz; cd quiz
+git init
+echo "print('hello world')" > bar.py
+git add foo.py
+git commit -m "added foo"
+echo "print('hola mundo')" > bar.py
+git add foo.py
+git commit -m "added foo"
+git branch foo
+git checkout foo
+echo "print('salve munde')" >> bar.py
+git add foo.py
+git commit -m "modified foo"
+git checkout master
+python3 foo.py
