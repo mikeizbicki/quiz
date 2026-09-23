@@ -43,17 +43,20 @@ export BLAS_VERBOSE=0
 models="
 groq-qwen
 gpt-6-astra
+gpt-6-sol
+gpt-6-luna
 gpt-5.6-sol
 gpt-5.6-terra
 gpt-5.6-luna
 anthropic/claude-fable-5-1
 anthropic/claude-fable-5
+anthropic/claude-opus-5-5
 anthropic/claude-opus-5
 anthropic/claude-opus-4-6
-anthropic/claude-sonnet-4-6
 anthropic/claude-opus-4-7
 anthropic/claude-opus-4-8
 anthropic/claude-sonnet-5
+anthropic/claude-sonnet-4-6
 "
 if [ "$2" = "allmodels" ]; then
     models="$models
@@ -80,7 +83,8 @@ for problem in "$quiz"/*; do
         if ! [ -s "$outfile_1shot" ]; then
             printf "$model "
             fullprompt_1shot="<human_instructions>$prompt</human_instructions> <response_format>$prompt_1shot<response_format> <problem>$(cat "${problem}")</problem>"
-            llm -o max_tokens 100 "$fullprompt_1shot" -m "$model" > "$outfile_1shot" &
+            llm "$fullprompt_1shot" -m "$model" > "$outfile_1shot" &
+            #llm -o max_tokens 100 "$fullprompt_1shot" -m "$model" > "$outfile_1shot" &
         fi
 
         if false; then
