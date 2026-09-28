@@ -1,0 +1,10 @@
+\begin{note}
+\emph{Mutual recursion} is when two (or more) functions call each other,
+forming a cycle of recursive calls.
+The base case of a mutually recursive pair may live in only one of the functions,
+so long as every call into the other function is eventually driven back
+to that base case.
+Mutual recursion is a natural fit for problems that alternate between two modes,
+such as summing the elements at even and odd indices of a list,
+or deciding whether a number is even or odd.
+\end{note}
