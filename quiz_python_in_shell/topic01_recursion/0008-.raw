@@ -1,0 +1,3 @@
+\begin{note}
+In python, it is common to define \emph{local functions} for recursion.
+\end{note}

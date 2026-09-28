@@ -1,0 +1,13 @@
+\begin{center}
+{
+\Large
+Recursion Quiz Practice Problems
+}
+\end{center}
+
+\begin{note}
+We call a function \emph{recursive} when it calls itself.
+A recursive function must have a \emph{base case} or it will loop forever.
+In python, these "forever loops" triggere a \lstinline{RuntimeError},
+but they are more generally called a \emph{stack overflow}.
+\end{note}

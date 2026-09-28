@@ -251,6 +251,10 @@ if __name__ == '__main__':
             content.append(r'\end{minipage}')
             inside_minipage = False
 
+    #if inside_minipage:
+        #content.append(r'\end{minipage}')
+        #inside_minipage = False
+
     import tempfile
     tempdir = tempfile.TemporaryDirectory()
     prev_cwd = os.getcwd()
@@ -337,6 +341,8 @@ if __name__ == '__main__':
     except subprocess.CalledProcessError as e:
         logging.error(f"e.stdout={e.stdout}")
         logging.error(f"e.stderr={e.stderr}")
+        logging.error(f"output_tex_path={os.getcwd() + '/' + output_tex_path}")
+        tempdir._finalizer.detach()
         #tempdir.cleanup()
         import sys
         sys.exit(1)
