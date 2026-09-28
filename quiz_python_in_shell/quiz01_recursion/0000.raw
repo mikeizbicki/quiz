@@ -1,0 +1,44 @@
+\begin{center}
+{
+\Large
+Quiz: Recursion (Practice Problems)
+}
+
+\vspace{0.1in}
+\end{center}
+
+\vspace{0.15in}
+\noindent
+\textbf{Total Score:} ~~~~~~~~~~~~~~~/$22$
+
+\vspace{0.2in}
+\noindent
+\textbf{Printed Name:}
+
+\noindent
+\rule{\textwidth}{0.1pt}
+\vspace{0.15in}
+
+\noindent
+\textbf{Quiz rules:}
+\begin{enumerate}
+    \item You MAY use any printed or handwritten notes.
+    \item You MAY NOT use a computer or any other electronic device.
+\end{enumerate}
+
+\noindent
+
+\vspace{0.15in}
+
+\noindent
+\textbf{Note 1.} You will have two quizzes on this material. The first quiz will be worth 22 points, and the second quiz worth 23 points. (Both will have 22 problems, the problems in the second quiz will be worth 2 points each.)
+
+\vspace{0.1in}
+\noindent
+\textbf{Note 2.} All of these problems are designed to tests your ability to reason about recursion in an abstract setting. The problems in the notes.py file use recursion to actually implement the practical problem of binary search.
+
+\vspace{0.1in}
+\noindent
+\textbf{Note 3.} Recall that recursion must have a base case. Without a base case, the recursion will cause a stack overflow, which in python is represented by throwing a RuntimeError. The code below catches this exception.
+
+\vspace{0.15in}
