@@ -6,8 +6,21 @@ Recursion Quiz Practice Problems
 \end{center}
 
 \begin{note}
-We call a function \emph{recursive} when it calls itself.
-A recursive function must have a \emph{base case} or it will loop forever.
-In python, these "forever loops" triggere a \lstinline{RuntimeError},
+We call a function \emph{recursive} if it calls itself.
+Every correct recursive function satisfies two laws:
+\begin{enumerate}
+\item in each recursive call, the input parameter somehow gets ``smaller'', and
+\item there is a \emph{base case} on the ``smallest'' input value that has no recursion.
+\end{enumerate}
+A recursive function that does not satisfy both of these laws will run forever.
+In python, these "forever loops" raise a \lstinline{RuntimeError},
 but they are more generally called a \emph{stack overflow}.
+\end{note}
+
+\begin{note}
+Recursion is closely related to \emph{mathematical induction}, which is covered in discrete math (MATH55) and several other courses.
+At first, most students find recursion very difficult.
+But eventually, writing recursive functions makes code easier to understand becuase it is much easier to write proofs about recursive functions than non-recursive functions.
+In this class, we will focus on runtime proofs using recursion,
+and the follow on graph algorithms course (CSCI148) covers more detailed proofs.
 \end{note}

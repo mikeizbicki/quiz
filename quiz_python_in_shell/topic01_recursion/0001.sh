@@ -3,7 +3,8 @@ cat > foo.py <<EOF
 def foo(xs):
     if len(xs) == 0:
         return 0
-    return xs[0] + foo(xs[1:])
+    ret = foo(xs[1:])
+    return xs[0] + ret
 try:
     print('foo([1, 2, 3, 4, 5])=',foo([1, 2, 3, 4, 5]))
 except RuntimeError:
