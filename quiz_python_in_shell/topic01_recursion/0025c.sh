@@ -5,13 +5,13 @@ def binary_search(xs, y):
         return False
     mid = len(xs) // 2
     if xs[mid] > y:
-        return binary_search(xs[:mid-1], y)
+        return binary_search(xs[:mid], y)
     if xs[mid] < y:
-        return binary_search(xs[mid+1:], y)
+        return binary_search(xs[mid:], y)
     return True
 try:
     xs = [1, 3, 5, 7, 9]
-    print('binary_search(xs, 3)=',binary_search(xs, 3))
+    print('binary_search(xs, 11)=',binary_search(xs, 11))
 except RuntimeError:
     print('StackOverflow')
 EOF

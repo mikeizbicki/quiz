@@ -10,7 +10,8 @@ def binary_search(xs, y):
         return binary_search(xs[mid+1:], y)
     return True
 try:
-    print('binary_search([1, 3, 5, 7, 9], 3)=',binary_search([1, 3, 5, 7, 9], 3))
+    xs = [1, 3, 5, 7, 9]
+    print('binary_search(xs, 9)=',binary_search(xs, 9))
 except RuntimeError:
     print('StackOverflow')
 EOF
