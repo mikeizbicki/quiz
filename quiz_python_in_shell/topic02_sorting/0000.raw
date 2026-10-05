@@ -27,7 +27,7 @@ You should never implement a sorting algorithm in the real world.
 The built-in python \lstinline{.sort()} and \lstinline{sorted()} are much faster than anything you will write for two reasons:
 \begin{enumerate}
 \item They are highly optimized and written in C instead of Python to reduce the constant factor.
-    (Most speed-sensitive functions in pytohn are written in C and python is only a ``wrapper'' around the C code.)
+    (Most speed-sensitive functions in python are written in C and python is only a ``wrapper'' around the C code.)
 \item Python uses TimSort.
     TimSort uses special tricks to reduce the runtime from $O(n\log n)$ to $O(n)$ in certain common situations (like if the data is partially sorted).
     TimSort was invented by Tim Peters,
@@ -38,14 +38,8 @@ but to get you more practice using recursion on real world applications.
 Also, sorting algorithms form the foundation for more complex algorithms you will learn later.
 \end{note}
 
-\clearpage
-\section{Merge Sort}
 \begin{note}
-\emph{Merge sort} splits the input into two halves, recursively
-sorts each half, and merges the two sorted halves into a sorted
-list. This gives the recurrence
-\[
-T(n) = 2 T(n/2) + O(n).
-\]
-By case 2 of the master theorem, $T(n) = O(n \log n)$.
+For each algorithm we study here, the first implementation will be correct.
+The rest may have subtle bugs in them.
+There will always be a note about runtimes---you will be responsible for this information on the final but not on the quiz.
 \end{note}

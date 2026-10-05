@@ -1,0 +1,14 @@
+\begin{note}
+Many programming languages take a comparison function \lstinline{cmp} instead of a key function for determining sort order.
+The \lstinline{cmp} function takes two parameters $a$ and $b$ and determines the sort order as follows:
+\begin{enumerate}
+\item A negative return value means $a<b$.
+\item A zero return value means $a==b$.
+\item A positive return value means $a>b$.
+\end{enumerate}
+In python, we prefer using the \lstinline{key} function when possible because python uses only $\Theta(n)$ calls to the key function,
+whereas a full $O(n\log n)$ calls are required to the \lstinline{cmp} function.
+Sometimes, however, it is easier to use the \lstinline{cmp} function,
+and the build-int \lstinline{functools.cmp_to_key} converts the \lstinline{cmp} function to a \lstinline{key} that python's sorts can use.
+\end{note}
+

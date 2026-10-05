@@ -1,31 +1,8 @@
 \section{Built-in Sorting}
 
 \begin{note}
-In python, both \lstinline{sorted(xs)} and \lstinline{xs.sort()} accept a \lstinline{key} argument,
-which is a function that determines the sort order.
+Both \lstinline{sorted} function and \lstinline{.sort} method accept a \lstinline{key} argument that changes the sort ordering.
+The \lstinline{key} function is applied to every element in the list,
+and the sort order is then determined by the result.
 \end{note}
 
-\begin{note}
-Example \lstinline{key} functions include the builtins
-\lstinline{len} and \lstinline{abs}, the string methods
-\lstinline{str.lower} and \lstinline{str.upper}, and functions
-from the \lstinline{operator} module such as
-\lstinline{operator.itemgetter} (which fetches an index) and
-\lstinline{operator.attrgetter} (which fetches an attribute).
-The \lstinline{lambda} keyword creates an anonymous function
-in-line, which is convenient for small expressions like
-\lstinline{lambda d: d['age']}. All of these are ordinary
-functions, so they can be passed around, stored in variables,
-or returned from other functions.
-\end{note}
-
-\begin{note}
-The \lstinline{key} function is called \emph{once} per element,
-so a sort using \lstinline{key=} makes $\Theta(n)$ calls to the key
-function, whereas the older style of passing a comparison
-function via \lstinline{functools.cmp_to_key} makes
-$O(n \log n)$ calls. Both produce the same sorted order, but the
-\lstinline{key} style is much faster in practice because the
-expensive python-level call happens outside the inner sorting
-loop.
-\end{note}

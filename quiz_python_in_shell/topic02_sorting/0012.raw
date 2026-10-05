@@ -11,3 +11,8 @@ This is for two reasons:
 \end{enumerate}
 Average case runtime analysis requires tracking probabilities and is beyond the scope of this class.
 \end{note}
+
+\begin{note}
+There are many variations of quicksort that select their pivot differently.
+The main reason for choosing different pivots is to make the code robust against different types of ``worst case'' inputs.
+\end{note}

@@ -1,0 +1,13 @@
+\end{minipage}
+\begin{minipage}{\textwidth}
+\section{Merge Sort}
+\begin{note}
+\emph{Merge sort} splits the input into two halves, recursively
+sorts each half, and merges the two sorted halves into a sorted
+list. This gives the recurrence
+\[
+T(n) = 2 T(n/2) + O(n).
+\]
+By the master theorem, $T(n) = O(n \log n)$.
+\end{note}
+
