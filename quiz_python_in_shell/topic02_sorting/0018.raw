@@ -1,6 +1,9 @@
 \begin{note}
 \emph{Quick select} is a variant of quick sort that returns only
-the $k$-th smallest element of the input, indexed from 0. Because
+the $k$-th smallest element of the input, indexed from 0.
+It is commonly used in data science applications when trying to calculate the median or percentile of a dataset.
+
+Because
 we only need to recurse into the partition that contains the
 $k$-th element, the recurrence is
 \[

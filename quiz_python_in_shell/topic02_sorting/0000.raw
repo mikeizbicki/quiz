@@ -6,13 +6,7 @@ Sorting Quiz Practice Problems
 \end{center}
 
 \begin{note}
-A \emph{sorting algorithm} takes a list
-$x_1, x_2, \ldots, x_n$ of elements and returns a permutation of the
-elements that is in increasing order. Sorting is the canonical
-\emph{divide and conquer} problem: both of the algorithms in this
-section, \emph{merge sort} and \emph{quick sort}, split the input
-into smaller pieces, recursively sort each piece, and then combine
-the sorted pieces into a single sorted output.
+There are many different sorting algorithms.
 \end{note}
 
 \begin{note}
@@ -23,12 +17,4 @@ list. This gives the recurrence
 T(n) = 2 T(n/2) + O(n).
 \]
 By case 2 of the master theorem, $T(n) = O(n \log n)$.
-\end{note}
-
-\begin{note}
-Every problem below begins with the same unsorted list
-\lstinline{[3, 7, 1, 8, 5, 10, 2, 9, 4, 6]}.
-The maximum element (10) sits at the middle index 5, and the list is
-otherwise in no particular order; both properties matter for the
-edge cases that the incorrect implementations trigger.
 \end{note}

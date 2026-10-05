@@ -6,8 +6,6 @@ recurrence is
 \[
 T(n) = 3 T(n/3) + O(n).
 \]
-Even though we are making more recursive calls, case 2 of the
-master theorem still gives $T(n) = O(n \log n)$: the extra fan-out
-is offset by the shorter recursion depth, and the total work at
-every level of the recursion tree remains linear.
+Even though we are making more recursive calls, the
+master theorem still gives $T(n) = O(n \log n)$.
 \end{note}
