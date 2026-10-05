@@ -1,0 +1,32 @@
+\begin{note}
+In python, both \lstinline{sorted(xs)} and \lstinline{xs.sort()}
+accept a \lstinline{key} argument: a function that is applied once
+to each element before comparison. This is an example of
+\emph{functional programming}: we pass a function as an argument
+to another function, just as we might pass an integer or a string.
+\end{note}
+
+\begin{note}
+The most common \lstinline{key} functions include the builtins
+\lstinline{len} and \lstinline{abs}, the string methods
+\lstinline{str.lower} and \lstinline{str.upper}, and functions
+from the \lstinline{operator} module such as
+\lstinline{operator.itemgetter} (which fetches an index) and
+\lstinline{operator.attrgetter} (which fetches an attribute).
+The \lstinline{lambda} keyword creates an anonymous function
+in-line, which is convenient for small expressions like
+\lstinline{lambda d: d['age']}. All of these are ordinary
+functions, so they can be passed around, stored in variables,
+or returned from other functions.
+\end{note}
+
+\begin{note}
+The \lstinline{key} function is called \emph{once} per element,
+so a sort using \lstinline{key=} makes $O(n)$ calls to the key
+function, whereas the older style of passing a comparison
+function via \lstinline{functools.cmp_to_key} makes
+$O(n \log n)$ calls. Both produce the same sorted order, but the
+\lstinline{key} style is much faster in practice because the
+expensive python-level call happens outside the inner sorting
+loop.
+\end{note}
