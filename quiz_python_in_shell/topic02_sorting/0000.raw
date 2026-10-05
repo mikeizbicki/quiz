@@ -6,9 +6,40 @@ Sorting Quiz Practice Problems
 \end{center}
 
 \begin{note}
-There are many different sorting algorithms.
+In this notes packet, we will study \emph{comparison based} sorting algorithms;
+that is, sorting algorithms that use the comparison operators \lstinline{<}, \lstinline{<=}, \lstinline{>}, \lstinline{>=} to perform the sort.
+A standard result (which you will not have to prove),
+is that any comparison based sorting algorithm requires at least $\Omega(n\log n)$ comparison operations.
+We will see that both merge sort and quick sort are ``optimal'' in the sense that merge sort has worst case runtime $O(n\log n)$ and quicksort has average case runtime $O(n\log n)$,
+both of which match the lower bound.
 \end{note}
 
+\begin{note}
+The primary use case of sorting is to be able to run binary search later.
+Recall that binary search takes time $O(\log n)$,
+but requires sorted data.
+In order to get this very fast runtime,
+we must pay a $\Omega(n\log n)$ ``setup cost'' penalty to sort the data.
+\end{note}
+
+\begin{note}
+You should never implement a sorting algorithm in the real world.
+The built-in python \lstinline{.sort()} and \lstinline{sorted()} are much faster than anything you will write for two reasons:
+\begin{enumerate}
+\item They are highly optimized and written in C instead of Python to reduce the constant factor.
+    (Most speed-sensitive functions in pytohn are written in C and python is only a ``wrapper'' around the C code.)
+\item Python uses TimSort.
+    TimSort uses special tricks to reduce the runtime from $O(n\log n)$ to $O(n)$ in certain common situations (like if the data is partially sorted).
+    TimSort was invented by Tim Peters,
+    who is widely considered the second most important person in the python world after Guido.
+\end{enumerate}
+We are studying sorting algorithms not so that you can write them,
+but to get you more practice using recursion on real world applications.
+Also, sorting algorithms form the foundation for more complex algorithms you will learn later.
+\end{note}
+
+\clearpage
+\section{Merge Sort}
 \begin{note}
 \emph{Merge sort} splits the input into two halves, recursively
 sorts each half, and merges the two sorted halves into a sorted

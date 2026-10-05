@@ -1,3 +1,4 @@
+\section{QuickSort}
 \begin{note}
 Quicksort is famous for having an $O(n^2)$ worst case runtime,
 but also usually being faster than merge sort.
@@ -6,7 +7,7 @@ This is for two reasons:
 \item The worst case runtime rarely happens.
     When the input list is randomly arranged,
     quicksort has average runtime $O(n\log n)$ which maches merge sort.
-\item quicksort has a small \emph{constant factor}.
+\item Quicksort has a small \emph{constant factor} which makes it fast in practice.
 \end{enumerate}
 Average case runtime analysis requires tracking probabilities and is beyond the scope of this class.
 \end{note}

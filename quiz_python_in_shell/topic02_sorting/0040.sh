@@ -10,7 +10,5 @@ def cmp(a, b):
 xs = ['banana', 'kiwi', 'apple', 'fig', 'cherry', 'date']
 zs = sorted(xs, key=functools.cmp_to_key(cmp))
 print('zs=', zs)
-zs = sorted(xs, key=len)
-print('zs=', zs)
 EOF
 python3 foo.py
