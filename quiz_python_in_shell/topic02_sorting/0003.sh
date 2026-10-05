@@ -23,7 +23,8 @@ def merged(xs, ys):
 
 xs = [3, 7, 1, 8, 5, 10, 2, 9, 4, 6]
 try:
-    print('merge_sorted(xs)=',merge_sorted(xs))
+    zs = merge_sorted(xs)
+    print('zs=', zs)
 except RuntimeError:
     print('StackOverflow')
 EOF

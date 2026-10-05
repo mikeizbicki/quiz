@@ -10,7 +10,8 @@ def quick_sorted(xs):
 
 xs = [3, 7, 1, 8, 5, 10, 2, 9, 4, 6]
 try:
-    print('quick_sorted(xs)=',quick_sorted(xs))
+    zs = quick_sorted(xs)
+    print('zs=', zs)
 except RuntimeError:
     print('StackOverflow')
 EOF

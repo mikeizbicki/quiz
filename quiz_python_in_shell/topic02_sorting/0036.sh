@@ -5,7 +5,7 @@ people = [
     {'name': 'alice', 'age': 30},
     {'name': 'bob',   'age': 20},
 ]
-print('sorted(people, key=lambda d: d["name"])=',
-      sorted(people, key=lambda d: d['name']))
+zs = sorted(people, key=lambda d: d['name'])
+print('zs=', zs)
 EOF
 python3 foo.py

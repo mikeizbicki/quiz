@@ -8,8 +8,9 @@ def cmp(a, b):
         return -1
     return 1 if a > b else 0
 xs = ['banana', 'kiwi', 'apple', 'fig', 'cherry', 'date']
-print('sorted(xs, key=functools.cmp_to_key(cmp))=',
-      sorted(xs, key=functools.cmp_to_key(cmp)))
-print('sorted(xs, key=len)=',sorted(xs, key=len))
+zs = sorted(xs, key=functools.cmp_to_key(cmp))
+print('zs=', zs)
+zs = sorted(xs, key=len)
+print('zs=', zs)
 EOF
 python3 foo.py

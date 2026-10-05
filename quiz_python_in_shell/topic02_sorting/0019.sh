@@ -16,7 +16,8 @@ def quick_select(xs, k):
 
 xs = [3, 7, 1, 8, 5, 10, 2, 9, 4, 6]
 try:
-    print('quick_select(xs, 5)=',quick_select(xs, 5))
+    zs = quick_select(xs, 5)
+    print('zs=', zs)
 except RuntimeError:
     print('StackOverflow')
 EOF
