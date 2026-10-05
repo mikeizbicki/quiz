@@ -1,0 +1,18 @@
+cd; rm -rf quiz; mkdir quiz; cd quiz
+cat > foo.py <<EOF
+def quick_select(xs, k):
+    if len(xs) == 1:
+        return xs[0]
+    mid = len(xs) // 2
+    pivot = xs[mid]
+    smaller = [x for x in xs if x <= pivot]
+    larger  = [x for x in xs if x > pivot]
+    if k < len(smaller):
+        return quick_select(smaller, k)
+    return quick_select(larger, k - len(smaller))
+
+xs = [3, 7, 1, 8, 5, 10, 2, 9, 4, 6]
+try:
+    print('quick_select(xs, 5)=',quick_select(xs, 5))
+except RuntimeError:
+    print('StackOverflow')

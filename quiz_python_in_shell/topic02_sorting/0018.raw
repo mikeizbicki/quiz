@@ -1,0 +1,11 @@
+\begin{note}
+\emph{Quick select} is a variant of quick sort that returns only
+the $k$-th smallest element of the input, indexed from 0. Because
+we only need to recurse into the partition that contains the
+$k$-th element, the recurrence is
+\[
+T(n) = T(n/2) + O(n),
+\]
+which gives $O(n)$ time in the average case despite quick select
+sharing quick sort's $O(n^2)$ worst case.
+\end{note}
