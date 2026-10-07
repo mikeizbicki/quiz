@@ -6,7 +6,7 @@ This is for two reasons:
 \begin{enumerate}
 \item The worst case runtime rarely happens.
     When the input list is randomly arranged,
-    quicksort has average runtime $O(n\log n)$ which maches merge sort.
+    quicksort has average runtime $O(n\log n)$ which matches merge sort.
 \item Quicksort has a small \emph{constant factor} which makes it fast in practice.
 \end{enumerate}
 Average case runtime analysis requires tracking probabilities and is beyond the scope of this class.
