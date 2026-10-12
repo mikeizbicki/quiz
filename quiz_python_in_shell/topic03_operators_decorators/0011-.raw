@@ -1,6 +1,14 @@
 \begin{note}
 The default \lstinline{__eq__} for objects is identity:
 two distinct objects are never equal.
+The \lstinline{is} operator tests that identity directly---it is \lstinline{True}
+only when both operands are the same object---while \lstinline{==} dispatches to
+\lstinline{__eq__} and asks whether the objects are \emph{equal}.
+The two agree when \lstinline{__eq__} is the default, but they are never
+interchangeable: prefer \lstinline{x is None} to \lstinline{x == None} because
+\lstinline{None} is a singleton, and beware that small ints and string literals
+are interned, so \lstinline{256 is 256} is \lstinline{True} while
+\lstinline{[] is []} is \lstinline{False}.
 Python also gives every object a default \lstinline{__hash__} based on its identity.
 There is a contract between \lstinline{__eq__} and \lstinline{__hash__}:
 if two objects are equal, they must have the same hash.
