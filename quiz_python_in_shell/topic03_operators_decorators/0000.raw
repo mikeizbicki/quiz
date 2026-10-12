@@ -1,0 +1,16 @@
+\begin{center}
+{
+\Large
+Operators and Decorators Quiz Practice Problems
+}
+\end{center}
+
+\begin{note}
+There are three ways to attach behavior to a class in python:
+you can hand-write the dunder method that python calls,
+you can use a class decorator to generate the dunder method for you,
+or you can inherit the method from a parent class.
+In this notes packet we study all three,
+and we show how the built-in decorators \lstinline{@dataclass} and \lstinline{@total_ordering}
+are just class decorators that generate dunders.
+\end{note}

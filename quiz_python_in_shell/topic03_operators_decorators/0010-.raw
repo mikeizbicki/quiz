@@ -1,0 +1,5 @@
+\begin{note}
+The \lstinline{__repr__} method is used to display objects in the REPL and inside containers.
+The \lstinline{__str__} method is used by \lstinline{print}.
+The default \lstinline{__str__} just calls \lstinline{__repr__}.
+\end{note}

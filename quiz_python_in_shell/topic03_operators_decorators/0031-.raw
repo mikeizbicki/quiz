@@ -1,0 +1,9 @@
+\begin{note}
+\lstinline{NotImplemented} is a special value, distinct from the exception \lstinline{NotImplementedError}.
+When a dunder method returns \lstinline{NotImplemented},
+python interprets that as ``I do not know how to perform this operation''
+and tries the reflected operation on the other operand.
+For example, evaluating \lstinline{1.0 == Vec(1.0, 2.0)}
+calls \lstinline{float.__eq__(1.0, Vec(...))}, which returns \lstinline{NotImplemented},
+so python falls back to identity comparison and returns \lstinline{False}.
+\end{note}

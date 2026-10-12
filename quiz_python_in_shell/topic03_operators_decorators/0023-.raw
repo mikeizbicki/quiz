@@ -1,0 +1,9 @@
+\begin{note}
+When python evaluates \lstinline{a + b},
+it first tries \lstinline{a.__add__(b)}.
+If that returns \lstinline{NotImplemented}
+(or if \lstinline{a} does not define \lstinline{__add__}),
+python tries the \emph{reflected} operation \lstinline{b.__radd__(a)}.
+This is what allows \lstinline{2 * Vec(1, 2)} to work
+even though \lstinline{int} does not know how to multiply itself by a \lstinline{Vec}.
+\end{note}

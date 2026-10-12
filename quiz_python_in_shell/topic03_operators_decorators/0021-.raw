@@ -1,0 +1,9 @@
+\begin{note}
+The \lstinline{@dataclass} decorator generates \lstinline{__init__}, \lstinline{__repr__}, \lstinline{__eq__}, and comparison methods,
+but it never generates arithmetic like \lstinline{__add__} or \lstinline{__mul__}.
+There is no \lstinline{arith=True} option, because there is no obvious default for \lstinline{+}:
+should \lstinline{Vec(1, 2) + Vec(3, 4)} be componentwise, or dot product, or something else?
+Every library that defines arithmetic on its own type
+(\lstinline{complex}, \lstinline{datetime}, \lstinline{numpy}, \lstinline{torch})
+hand-writes the arithmetic dunders.
+\end{note}

@@ -1,0 +1,8 @@
+\begin{note}
+The \lstinline{@dataclass} decorator examines the class body,
+and generates \lstinline{__init__}, \lstinline{__repr__}, and \lstinline{__eq__} methods
+based on the field annotations.
+With \lstinline{frozen=True}, it also generates \lstinline{__hash__}.
+With \lstinline{eq=True, frozen=False}, it sets \lstinline{__hash__ = None},
+matching the behavior of hand-written \lstinline{__eq__} from the previous section.
+\end{note}

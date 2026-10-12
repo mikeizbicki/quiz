@@ -1,0 +1,7 @@
+\begin{note}
+The \lstinline{@total_ordering} class decorator is applied to a class that has defined
+\lstinline{__eq__} and one of the four comparison operators \lstinline{<}, \lstinline{<=}, \lstinline{>}, \lstinline{>=}.
+It generates the other three comparison operators from those.
+Like \lstinline{@dataclass}, it is a class decorator:
+it takes a class, adds methods, and returns the (possibly modified) class.
+\end{note}

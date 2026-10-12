@@ -1,0 +1,11 @@
+\begin{note}
+For \lstinline{a += b},
+python will use \lstinline{a.__iadd__(b)} if it exists,
+and otherwise fall back to \lstinline{a = a + b}.
+Mutable containers like \lstinline{list} define \lstinline{__iadd__} (which extends the list in place),
+while immutable types like \lstinline{tuple} and \lstinline{str} do not.
+The difference is observable through aliasing:
+if you write \lstinline{ys = xs} and then \lstinline{xs += [1]},
+with a list, \lstinline{ys} also sees the change,
+but with a tuple, \lstinline{ys} still refers to the old object.
+\end{note}

@@ -1,0 +1,11 @@
+\begin{note}
+When a class \lstinline{B} derives from a class \lstinline{A},
+we write \lstinline{class B(A):}.
+The function \lstinline{super()} returns the next class in the \emph{method resolution order} (MRO),
+which for simple cases is just the parent class \lstinline{A}.
+Because the parent class owns its own state,
+its \lstinline{__init__} method is responsible for setting that state;
+the child's \lstinline{__init__} should therefore call \lstinline{super().__init__(...)} to run it.
+If the child forgets this call,
+then any attributes that only the parent sets will not exist on the child.
+\end{note}

@@ -1,0 +1,7 @@
+\begin{note}
+The \lstinline{functools.lru_cache} decorator is a library implementation of memoization.
+It uses the arguments to the decorated function as the dictionary keys,
+so the arguments must be \emph{hashable}.
+Mutable containers like lists and dicts are not hashable,
+and passing them to an \lstinline{lru_cache}'d function raises \lstinline{TypeError}.
+\end{note}

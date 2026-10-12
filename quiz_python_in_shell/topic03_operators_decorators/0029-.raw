@@ -1,0 +1,9 @@
+\begin{note}
+Not every ordering is a \emph{total} order.
+For example, we could compare \lstinline{Vec}s by Pareto domination:
+\lstinline{a <= b} means every component of \lstinline{a} is no larger than the corresponding component of \lstinline{b}.
+Then \lstinline{Vec(1, 2)} and \lstinline{Vec(2, 1)} are incomparable:
+neither is less than or equal to the other.
+Python's \lstinline{sorted} does not require a total order,
+only one that is consistent, and returns \emph{some} linear extension of the partial order.
+\end{note}

@@ -1,0 +1,9 @@
+\begin{note}
+Exceptions are just classes,
+and the exception hierarchy carries meaning.
+For example, \lstinline{RecursionError} is a subclass of \lstinline{RuntimeError},
+so an \lstinline{except RuntimeError} block will also catch a \lstinline{RecursionError}.
+This is why the recursion quiz problems keep saying \lstinline{except RuntimeError}:
+a stack overflow is reported by python as a \lstinline{RecursionError},
+which is a kind of \lstinline{RuntimeError}.
+\end{note}

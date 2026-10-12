@@ -1,0 +1,8 @@
+\begin{note}
+A \emph{decorator} is a function that takes a function and returns a function.
+The syntax \lstinline{@decorate def f(x): ...}
+is ``syntactic sugar'' for \lstinline{f = decorate(f)}.
+Decorators are the reason you can attach behavior (like memoization)
+to a recursive function in one line
+instead of rebinding the name every time.
+\end{note}

@@ -1,0 +1,11 @@
+\begin{note}
+The default \lstinline{__eq__} for objects is identity:
+two distinct objects are never equal.
+Python also gives every object a default \lstinline{__hash__} based on its identity.
+There is a contract between \lstinline{__eq__} and \lstinline{__hash__}:
+if two objects are equal, they must have the same hash.
+When you override \lstinline{__eq__},
+python automatically sets \lstinline{__hash__ = None},
+which makes the class unhashable.
+This is to prevent the class from silently violating the contract.
+\end{note}
