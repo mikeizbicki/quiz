@@ -1,0 +1,13 @@
+\begin{note}
+\lstinline{isinstance(obj, cls)} is \lstinline{True} when \lstinline{obj} is an instance of \lstinline{cls}
+\emph{or of any subclass of} \lstinline{cls}.
+The test is one-directional:
+an instance of a child is an instance of its parent, but an instance of the parent is not an instance of the child.
+Pass a tuple to test against several classes at once: \lstinline{isinstance(x, (A, B))}.
+Prefer \lstinline{isinstance} to \lstinline{type(x) is A},
+which is \lstinline{False} for subclass instances and hides builtin subtyping such as \lstinline{bool} being a subclass of \lstinline{int}.
+\lstinline{issubclass} performs the same test on classes instead of instances.
+This is how \lstinline{except} matches exceptions:
+because \lstinline{KeyError} is a subclass of \lstinline{LookupError},
+an \lstinline{except LookupError} clause catches it.
+\end{note}
