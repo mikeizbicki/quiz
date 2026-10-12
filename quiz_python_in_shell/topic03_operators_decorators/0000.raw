@@ -1,16 +1,13 @@
 \begin{center}
 {
 \Large
-Operators and Decorators Quiz Practice Problems
+Operators and Decorators Notes
 }
 \end{center}
 
 \begin{note}
-There are three ways to attach behavior to a class in python:
-you can hand-write the dunder method that python calls,
-you can use a class decorator to generate the dunder method for you,
-or you can inherit the method from a parent class.
-In this notes packet we study all three,
-and we show how the built-in decorators \lstinline{@dataclass} and \lstinline{@total_ordering}
-are just class decorators that generate dunders.
+This quiz covers the basics for ``making your own types'' in python.
+These techniques are used in standard data science libraries like \lstinline{pandas}, \lstinline{torch}, and \lstinline{sqlalchemy} for making complicated data operations easy for the user.
+This quiz focuses on the fundamental techniques,
+and later we will learn how they apply concretely to these libraries.
 \end{note}

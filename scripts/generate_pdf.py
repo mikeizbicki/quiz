@@ -83,6 +83,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('quizpath')
     parser.add_argument('--nographs', action='store_true')
+    parser.add_argument('--noshell', action='store_true')
     parser.add_argument('--verbose', action='store_true')
     parser.add_argument('--key', action='store_true')
     args = parser.parse_args()
@@ -101,7 +102,8 @@ if __name__ == '__main__':
     import subprocess
     shell_path = os.path.dirname(__file__) + '/run_models.sh'
     try:
-        subprocess.check_call(['sh', shell_path, args.quizpath])
+        if not args.noshell:
+            subprocess.check_call(['sh', shell_path, args.quizpath])
     except subprocess.CalledProcessError as e:
         raise
 
@@ -235,7 +237,11 @@ if __name__ == '__main__':
     Failing LLMs: & ''' + ', '.join(latexify(fail_llms)) + r''' \\
     \end{tabular}
     ''')
-                content.append(f'Fraction of LLMs with correct answer: {len(pass_llms)} / {len(pass_llms) + len(fail_llms)} = {len(pass_llms) / (len(pass_llms) + len(fail_llms)):0.02f}')
+                try:
+                    frac = len(pass_llms) / (len(pass_llms) + len(fail_llms))
+                except ZeroDivisionError:
+                    frac = 1.0
+                content.append(f'Fraction of LLMs with correct answer: {len(pass_llms)} / {len(pass_llms) + len(fail_llms)} = {frac:0.02f}')
                 content.append(r'\vspace{0.5in}')
 
                 # look for any llms that we've seen before but were not in the current set of test cases;

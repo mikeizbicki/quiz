@@ -6,4 +6,4 @@ and tries the reflected operation on the other operand.
 For example, evaluating \lstinline{1.0 == Vec(1.0, 2.0)}
 so python falls back to the \lstinline{is} test on the two operands and returns \lstinline{False}.
 so python falls back to identity comparison and returns \lstinline{False}.
-++ b/quiz_python_in_shell/topic03_operators_decorators/0032.sh
+\end{note}
