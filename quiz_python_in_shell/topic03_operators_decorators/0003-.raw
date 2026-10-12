@@ -6,4 +6,28 @@ so an \lstinline{except RuntimeError} block will also catch a \lstinline{Recursi
 This is why the recursion quiz problems keep saying \lstinline{except RuntimeError}:
 a stack overflow is reported by python as a \lstinline{RecursionError},
 which is a kind of \lstinline{RuntimeError}.
+
+The hierarchy of the exceptions you are required to know is:
+
+\begin{lstlisting}
+BaseException
+`-- Exception
+    |-- LookupError
+    |   |-- IndexError
+    |   `-- KeyError
+    |-- RuntimeError
+    |   `-- RecursionError
+    |-- AttributeError
+    |   `-- FrozenInstanceError
+    |-- TypeError
+    |-- ValueError
+    |-- AssertionError
+    `-- ZeroDivisionError
+\end{lstlisting}
+
+\lstinline{LookupError} is the parent of \lstinline{IndexError} and \lstinline{KeyError},
+so an \lstinline{except LookupError} block catches both list out-of-bounds
+and dict missing-key errors.
+\lstinline{FrozenInstanceError} is a kind of \lstinline{AttributeError},
+raised when assigning to a field of a \lstinline{@dataclass(frozen=True)} instance.
 \end{note}
