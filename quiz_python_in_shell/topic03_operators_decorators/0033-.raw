@@ -1,6 +1,7 @@
+\section{Complete Examples}
 \begin{note}
 The decorators \lstinline{@dataclass} and \lstinline{@total_ordering} are just functions that take a class,
 add methods to it, and return the modified class.
 We can write our own class decorators in exactly the same way.
-This is how libraries like \lstinline{attrs}, \lstinline{torch.nn.Module}, and every ORM define their classes.
+This is how libraries like \lstinline{torch} and \lstinline{sqlalchemy} define their classes.
 \end{note}

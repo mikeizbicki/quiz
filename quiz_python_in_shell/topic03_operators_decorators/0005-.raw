@@ -1,8 +1,8 @@
+\section{Decorators}
 \begin{note}
 A \emph{decorator} is a function that takes a function and returns a function.
+For example, we saw in a previous lab that \lstinline{lru_cache} is a decorator that \emph{memoizes} recursive functions to make them more efficient.
 The syntax \lstinline{@decorate def f(x): ...}
 is ``syntactic sugar'' for \lstinline{f = decorate(f)}.
-Decorators are the reason you can attach behavior (like memoization)
-to a recursive function in one line
-instead of rebinding the name every time.
+Decorators can modify functions, classes, and any other object type in python.
 \end{note}

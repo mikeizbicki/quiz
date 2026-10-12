@@ -1,12 +1,7 @@
-\begin{note}
-Exceptions are just classes,
-and the exception hierarchy carries meaning.
-For example, \lstinline{RecursionError} is a subclass of \lstinline{RuntimeError},
-so an \lstinline{except RuntimeError} block will also catch a \lstinline{RecursionError}.
-This is why the recursion quiz problems keep saying \lstinline{except RuntimeError}:
-a stack overflow is reported by python as a \lstinline{RecursionError},
-which is a kind of \lstinline{RuntimeError}.
+\subsection{Exceptions}
 
+\begin{note}
+Exceptions are just classes.
 The hierarchy of the exceptions you are required to know is:
 
 \begin{lstlisting}
@@ -28,6 +23,6 @@ BaseException
 \lstinline{LookupError} is the parent of \lstinline{IndexError} and \lstinline{KeyError},
 so an \lstinline{except LookupError} block catches both list out-of-bounds
 and dict missing-key errors.
-\lstinline{FrozenInstanceError} is a kind of \lstinline{AttributeError},
-raised when assigning to a field of a \lstinline{@dataclass(frozen=True)} instance.
+\lstinline{FrozenInstanceError} is a kind of \lstinline{AttributeError}, raised when
+assigning to a field of a \lstinline{@dataclass(frozen=True)} instance.
 \end{note}

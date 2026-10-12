@@ -1,3 +1,4 @@
+\section{Class Hierarchies}
 \begin{note}
 When a class \lstinline{B} derives from a class \lstinline{A},
 we write \lstinline{class B(A):}.

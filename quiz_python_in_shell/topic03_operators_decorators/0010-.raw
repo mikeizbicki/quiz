@@ -1,3 +1,4 @@
+\section{Dunder Zoo}
 \begin{note}
 The \lstinline{__repr__} method is used to display objects in the REPL and inside containers.
 The \lstinline{__str__} method is used by \lstinline{print}.
