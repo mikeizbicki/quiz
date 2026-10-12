@@ -19,6 +19,5 @@ class Vec:
 
 xs = [Vec(1, 2), Vec(3, 4), Vec(5, 6)]
 print('sum(xs) =', sum(xs))
-print('Vec(1, 2) + Vec(3, 4) =', Vec(1, 2) + Vec(3, 4))
 EOF
 python3 foo.py
