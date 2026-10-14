@@ -1,5 +1,11 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
 cat > foo.py <<EOF
+# HINT:
+# this problem is *almost* exactly the same as one of
+# the problems in your review packet;
+# the only difference is that a single character has
+# been changed somewhere
+
 def add_arithmetic(cls):
     def __add__(self, other):
         return cls(self.x + other.x, self.y * other.y)

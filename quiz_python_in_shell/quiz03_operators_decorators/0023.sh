@@ -10,12 +10,8 @@ class Vec:
             return NotImplemented
         return Vec(other * self.x, other * self.y)
 try:
-    print('Vec(1, 2) * 3 =', Vec(1, 2) * 3)
-except TypeError:
-    print('TypeError')
-print('3 * Vec(1, 2) =', 3 * Vec(1, 2))
-try:
-    print('3.0 * Vec(1, 2) =', 3.0 * Vec(1, 2))
+    z = 3 * Vec(1, 2)
+    print('z=', z)
 except TypeError:
     print('TypeError')
 EOF
