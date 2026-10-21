@@ -1,0 +1,25 @@
+\subsection{FooBar Circular References}
+
+\begin{note}
+A \lstinline{FooBar} is a class whose attributes (\lstinline{x}, \lstinline{y}, \lstinline{z})
+carry no fixed meaning.
+Each attribute may hold an integer or another \lstinline{FooBar} instance.
+Because the attribute names hint at nothing, careful tracing is required.
+
+Every problem prints exactly two lines:
+the first from a chain of attribute accesses (for example, \lstinline{t.y.y.x}),
+and the second from a call to a recursive method (for example, \lstinline{t.wob()}).
+
+Some problems build structures with a \emph{circular reference},
+either accidentally inside \lstinline{__init__} or on purpose via assignment after construction.
+A circular reference does not always cause infinite recursion:
+\begin{itemize}
+\item an attribute chain (\lstinline{t.y.y.y.y}) terminates after a fixed number of steps regardless of cycles,
+\item a recursive method that bounds its depth also terminates,
+\item a recursive method that walks the cycle without a bound raises \lstinline{RecursionError},
+which is caught and printed as the second line.
+\end{itemize}
+
+The first problem is a correct reference implementation.
+The remaining problems introduce a bug or a variation.
+\end{note}
