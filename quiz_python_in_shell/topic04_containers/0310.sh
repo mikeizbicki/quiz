@@ -1,0 +1,26 @@
+cd; rm -rf quiz; mkdir quiz; cd quiz
+cat > foo.py <<EOF
+class FooBar:
+    def __init__(self, x, y=None):
+        self.x = x
+        self.y = y
+
+    def wob(self):
+        if self.y is None:
+            return self.x
+        return self.x + self.y.wob()
+
+t = FooBar(None)
+u = FooBar(5)
+t.y = u
+try:
+    print(t.y.x)
+    print(t.wob())
+except RecursionError:
+    print('RecursionError')
+except AttributeError:
+    print('AttributeError')
+except TypeError:
+    print('TypeError')
+EOF
+python3 foo.py

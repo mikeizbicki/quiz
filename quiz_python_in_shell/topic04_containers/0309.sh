@@ -23,5 +23,7 @@ except RecursionError:
     print('RecursionError')
 except AttributeError:
     print('AttributeError')
+except TypeError:
+    print('TypeError')
 EOF
 python3 foo.py

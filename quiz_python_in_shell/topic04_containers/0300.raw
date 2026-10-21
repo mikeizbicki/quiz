@@ -20,9 +20,10 @@ A circular reference does not always cause infinite recursion:
 \item an attribute chain (\lstinline{t.y.y.y.y}) terminates after a fixed number of steps regardless of cycles,
 \item a recursive method that bounds its depth also terminates,
 \item a recursive method that walks the cycle without a bound raises \lstinline{RecursionError},
-\item accessing an attribute on an \lstinline{int} or \lstinline{None} raises \lstinline{AttributeError}.
+\item accessing an attribute on an \lstinline{int} or \lstinline{None} raises \lstinline{AttributeError},
+\item adding to \lstinline{None} (for example, \lstinline{None + 5}) raises \lstinline{TypeError}.
 \end{itemize}
-Both \lstinline{RecursionError} and \lstinline{AttributeError} are caught,
+The exceptions \lstinline{RecursionError}, \lstinline{AttributeError}, and \lstinline{TypeError} are caught,
 and the name of the exception is printed.
 Some problems would raise an exception on the second print, but the first print raises one first,
 so only the first exception name is observed.
