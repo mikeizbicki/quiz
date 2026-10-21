@@ -17,5 +17,7 @@ try:
     print(t.wob(4))
 except RecursionError:
     print('RecursionError')
+except AttributeError:
+    print('AttributeError')
 EOF
 python3 foo.py

@@ -6,9 +6,12 @@ carry no fixed meaning.
 Each attribute may hold an integer or another \lstinline{FooBar} instance.
 Because the attribute names hint at nothing, careful tracing is required.
 
-Every problem prints exactly two lines:
+Every problem contains two \lstinline{print} statements inside a \lstinline{try} block:
 the first from a chain of attribute accesses (for example, \lstinline{t.y.y.x}),
 and the second from a call to a recursive method (for example, \lstinline{t.wob()}).
+When no exception is raised, both lines are printed.
+When an exception is raised, Python exits the \lstinline{try} block immediately and
+only the first line (or the name of the exception) is printed.
 
 Some problems build structures with a \emph{circular reference},
 either accidentally inside \lstinline{__init__} or on purpose via assignment after construction.
@@ -17,8 +20,12 @@ A circular reference does not always cause infinite recursion:
 \item an attribute chain (\lstinline{t.y.y.y.y}) terminates after a fixed number of steps regardless of cycles,
 \item a recursive method that bounds its depth also terminates,
 \item a recursive method that walks the cycle without a bound raises \lstinline{RecursionError},
-which is caught and printed as the second line.
+\item accessing an attribute on an \lstinline{int} or \lstinline{None} raises \lstinline{AttributeError}.
 \end{itemize}
+Both \lstinline{RecursionError} and \lstinline{AttributeError} are caught,
+and the name of the exception is printed.
+Some problems would raise an exception on the second print, but the first print raises one first,
+so only the first exception name is observed.
 
 The first problem is a correct reference implementation.
 The remaining problems introduce a bug or a variation.

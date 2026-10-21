@@ -1,9 +1,10 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
 cat > foo.py <<EOF
 class FooBar:
-    def __init__(self, x, y=None):
+    def __init__(self, x, y=None, z=None):
         self.x = x
         self.y = y
+        self.z = z
 
     def wob(self):
         if self.y is None:
@@ -11,12 +12,16 @@ class FooBar:
         return self.x + self.y.wob()
 
 t = FooBar(1)
-u = FooBar(2, t)
+u = FooBar(2)
 t.y = u
+u.y = t
+t.z = 5
 try:
-    print(t.y.x)
+    print(t.z.x)
     print(t.wob())
 except RecursionError:
     print('RecursionError')
+except AttributeError:
+    print('AttributeError')
 EOF
 python3 foo.py
