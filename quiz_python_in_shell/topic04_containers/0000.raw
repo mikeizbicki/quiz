@@ -1,0 +1,14 @@
+\begin{center}
+{
+\Large
+Containers Quiz Practice Problems
+}
+\end{center}
+
+\begin{note}
+A \emph{container} is a class that holds other values.
+The built-in containers you know are \lstinline{list}, \lstinline{dict}, \lstinline{set}, and \lstinline{tuple},
+and they all implement the same small set of dunder methods---the \emph{container protocol}---so that the same syntax works on all of them.
+In this notes packet we implement the container protocol on types we define ourselves:
+a \lstinline{Range}, a linked list, and a binary search tree.
+\end{note}

@@ -1,0 +1,47 @@
+\section{Custom Containers}
+
+\subsection{Range}
+
+\begin{note}
+A \lstinline{Range} represents the arithmetic sequence
+\[
+\mathtt{start}, \; \mathtt{start}+\mathtt{step}, \; \mathtt{start}+2\cdot\mathtt{step}, \; \dots
+\]
+stopping \emph{before} \lstinline{stop}.
+This is exactly the semantics of the built-in \lstinline{range}, and our class mirrors it.
+\end{note}
+
+\begin{note}
+The three dunder methods we implement are:
+\begin{enumerate}
+\item \lstinline{__len__} returns the number of elements in the sequence,
+\item \lstinline{__contains__} answers whether a value appears in the sequence, and
+\item \lstinline{__getitem__} returns the element at a given position.
+\end{enumerate}
+\end{note}
+
+\begin{note}
+The key insight is that \emph{none of these methods loops over the sequence}.
+Because the sequence is arithmetic, all three have closed-form formulas:
+\begin{enumerate}
+\item the length is $\max\left(0, -\left\lfloor (\mathtt{start}-\mathtt{stop})/\mathtt{step} \right\rfloor\right)$,
+\item membership is a divisibility test plus a bounds check,
+\item indexing is $\mathtt{start} + \mathtt{step} \cdot i$.
+\end{enumerate}
+This is why \lstinline{5 in range(10**9)} returns instantly instead of taking a second.
+\end{note}
+
+\begin{note}
+The \lstinline{max(0, ...)} in the length formula matters because
+the formula can return a negative number for an empty range.
+Python rejects negative return values from \lstinline{__len__} by raising \lstinline{ValueError},
+so the failure mode without the \lstinline{max} is an exception rather than a wrong count.
+\end{note}
+
+\begin{note}
+Because \lstinline{__contains__} is a divisibility test,
+the value of \lstinline{start} matters:
+\lstinline{5 in Range(0, 10, 2)} is \lstinline{False},
+but \lstinline{5 in Range(1, 10, 2)} is \lstinline{True}.
+It is a common mistake to test \lstinline{x % step == 0} instead of \lstinline{(x - start) % step == 0}.
+\end{note}

@@ -1,0 +1,36 @@
+\subsection{Lists from Trees}
+
+\begin{note}
+Structural recursion on a tree is the same idea as on a linked list,
+except that there are two recursive calls instead of one.
+For a tree \lstinline{t} that may be \lstinline{None}, the pattern is:
+\begin{enumerate}
+\item the base case is \lstinline{t is None}, and
+\item the recursive case combines the result of recursing on \lstinline{t.left},
+    the current value \lstinline{t.val},
+    and the result of recursing on \lstinline{t.right}.
+\end{enumerate}
+The \emph{order} of those three pieces determines the traversal:
+\begin{enumerate}
+\item \textbf{inorder}: left, value, right---produces sorted order.
+\item \textbf{preorder}: value, left, right.
+\item \textbf{postorder}: left, right, value.
+\end{enumerate}
+\end{note}
+
+\begin{note}
+To \emph{insert} into a tree, we descend using the BST invariant
+and rebuild the tree on the way back up.
+This is why \lstinline{insert} must return the new subtree root:
+when the descent reaches \lstinline{None} we return a newly-created node,
+and each ancestor reassigns its child pointer to the returned value.
+Forgetting the reassignment \lstinline{t.left = insert(t.left, val)}
+silently throws away every node except the root.
+\end{note}
+
+\begin{note}
+Once we can produce the sorted list via an inorder traversal,
+the list-like interface is trivial:
+\lstinline{__getitem__(i)} is just \lstinline{inorder(self.root)[i]}.
+Negative indexing and out-of-range \lstinline{IndexError} come for free from list semantics.
+\end{note}

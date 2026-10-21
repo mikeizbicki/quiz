@@ -1,0 +1,31 @@
+\subsection{Linked Lists}
+
+\begin{note}
+A linked list node has two fields: a \lstinline{val} and a \lstinline{nxt} pointer to the next node.
+The smallest list is a single node whose \lstinline{nxt} is \lstinline{None}.
+\end{note}
+
+\begin{note}
+The three container dunders on a linked list each have a distinct recursion pattern:
+\begin{enumerate}
+\item \lstinline{__len__} is an \emph{aggregation}: one plus the length of the tail.
+\item \lstinline{__contains__} is a \emph{search}: check the current node, then recurse.
+\item \lstinline{__getitem__} is a \emph{descent}: recurse on the tail with the index decremented.
+\end{enumerate}
+All three use \lstinline{self.nxt is None} as the base case,
+because \lstinline{self} is always a real node (the empty list is represented by not having a node at all).
+\end{note}
+
+\begin{note}
+The order of the recursion matters even when each individual line looks correct.
+For \lstinline{__contains__}, checking \lstinline{self.nxt is None} \emph{before}
+checking \lstinline{self.val == target} turns a hit on the last element into a miss.
+For \lstinline{__len__}, returning \lstinline{0} instead of \lstinline{1} at the base case
+silently reports every list as one element too short.
+\end{note}
+
+\begin{note}
+For \lstinline{__getitem__}, the descent must decrement the index on each step:
+\lstinline{return self.nxt[i - 1]}.
+Forgetting the \lstinline{- 1} walks past the requested element and eventually raises \lstinline{IndexError}.
+\end{note}

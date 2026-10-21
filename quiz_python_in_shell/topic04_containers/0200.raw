@@ -1,0 +1,21 @@
+\section{Binary Search Trees}
+
+\begin{note}
+A binary search tree node has three fields: a \lstinline{val}, a \lstinline{left} subtree, and a \lstinline{right} subtree.
+Both subtrees are themselves trees, and the empty tree is represented by \lstinline{None}.
+\end{note}
+
+\begin{note}
+The \emph{BST invariant} says that for every node,
+every value in the left subtree is strictly smaller than the node's value,
+and every value in the right subtree is strictly larger.
+\end{note}
+
+\begin{note}
+The BST invariant is what makes search fast,
+and it is also what makes an \emph{inorder traversal}
+(visit left, then the node, then right)
+produce the values in sorted order.
+That is the entire reason a tree can be used as a sorted container:
+the traversal does the sorting for you.
+\end{note}

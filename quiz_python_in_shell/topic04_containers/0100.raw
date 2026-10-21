@@ -1,0 +1,20 @@
+\section{Structural Recursion}
+
+\begin{note}
+\emph{Structural recursion} is a recursive function whose recursive calls
+follow the \emph{structure} of the input data.
+For a linked list, the structure is ``a value and the rest of the list'',
+so the recursive call is on the \lstinline{nxt} pointer of the current node.
+For a binary search tree, the structure is ``a value, a left subtree, and a right subtree'',
+so there are two recursive calls.
+\end{note}
+
+\begin{note}
+Every structurally recursive function has the same two ingredients:
+\begin{enumerate}
+\item a \emph{base case} for the smallest structure, and
+\item a \emph{recursive case} that combines the current value with the result of recursing on the substructure.
+\end{enumerate}
+For a linked list the smallest structure is a single node with \lstinline{nxt is None};
+for a tree the smallest structure is the empty tree \lstinline{None}.
+\end{note}
