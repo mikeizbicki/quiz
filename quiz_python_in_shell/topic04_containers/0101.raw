@@ -5,3 +5,14 @@ A \emph{linked list} is the simplest of recursive structures.
 The \lstinline{Node} class below has an attribute \lstinline{nxt} that points to \lstinline{None} (the base case) or another \lstinline{Node} instance (the recursive case).
 The linked lists in this section implement an interface similar to the \lstinline{[]} list type.
 \end{note}
+
+\begin{note}
+If \lstinline{nxt} is set so that the list points back to an earlier node,
+the structure becomes a \emph{circular linked list}.
+A circular list still supports \lstinline{__getitem__} for nonnegative indices,
+since the recursion still reaches \lstinline{i == 0}.
+But \lstinline{__len__} relies on eventually finding \lstinline{nxt is None},
+which never happens in a cycle, so it raises \lstinline{RecursionError}.
+The same happens to \lstinline{__getitem__} with a negative index,
+since \lstinline{i == 0} is never reached.
+\end{note}
