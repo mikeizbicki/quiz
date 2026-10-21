@@ -8,13 +8,11 @@ class Node:
     def __len__(self):
         if self.nxt is None:
             return 1
-        return 1 + len(self.nxt)
+        return len(self.nxt)
 
     def __contains__(self, target):
         if self.val == target:
             return True
-        if self.nxt is None:
-            return False
         return target in self.nxt
 
     def __getitem__(self, i):
@@ -25,10 +23,10 @@ class Node:
         return self.nxt[i - 1]
 
 try:
-    xs = Node(42)
+    xs = Node(5, Node(10, Node(15)))
     n = len(xs)
     print('n =', n)
-    v = 42 in xs
+    v = 20 in xs
     print('v =', v)
 except IndexError:
     print('IndexError')

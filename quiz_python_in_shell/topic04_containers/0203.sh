@@ -10,9 +10,9 @@ def insert(t, val):
     if t is None:
         return Node(val)
     if val < t.val:
-        t.left = insert(t.left, val)
-    elif val > t.val:
         t.right = insert(t.right, val)
+    elif val > t.val:
+        t.left = insert(t.left, val)
     return t
 
 def inorder(t):
@@ -32,11 +32,11 @@ class Tree:
 
 try:
     t = Tree()
-    for val in [5, 8, 3, 4, 1]:
+    for val in [5, 3, 8, 1, 4]:
         t.insert(val)
-    x = t[0]
+    x = t[1]
     print('x =', x)
-    y = t[4]
+    y = t[3]
     print('y =', y)
 except IndexError:
     print('IndexError')

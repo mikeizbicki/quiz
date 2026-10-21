@@ -34,7 +34,7 @@ try:
     t = Tree()
     for val in [5, 3, 8, 1, 4]:
         t.insert(val)
-    x = t[0]
+    x = t[1]
     print('x =', x)
     y = t[-1]
     print('y =', y)

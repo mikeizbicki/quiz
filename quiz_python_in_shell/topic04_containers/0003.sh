@@ -7,12 +7,12 @@ class Range:
         self.step = step
 
     def __len__(self):
-        return max(0, -((self.start - self.stop) // self.step))
+        return (self.stop - self.start) // self.step
 
     def __contains__(self, x):
         if (x - self.start) % self.step != 0:
             return False
-        return 0 <= (x - self.start) // self.step < len(self)
+        return (x - self.start) // self.step < len(self)
 
     def __getitem__(self, i):
         n = len(self)
@@ -23,10 +23,10 @@ class Range:
         return self.start + self.step * i
 
 try:
-    r = Range(10, 0, -2)
+    r = Range(0, 50, 7)
     n = len(r)
     print('n =', n)
-    x = r[3]
+    x = -7 in r
     print('x =', x)
 except ValueError:
     print('ValueError')

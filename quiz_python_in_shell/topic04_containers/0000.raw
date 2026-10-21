@@ -12,3 +12,12 @@ and they all implement the same small set of dunder methods---the \emph{containe
 In this notes packet we implement the container protocol on types we define ourselves:
 a \lstinline{Range}, a linked list, and a binary search tree.
 \end{note}
+
+\begin{note}
+Each problem produces exactly two lines of output and is worth two points,
+one point per line.
+Within each subsection the first problem is a correct reference
+implementation. The remaining problems contain subtle bugs or variations,
+so do not assume the code behaves like the corresponding built-in type---%
+trace the code that is actually written.
+\end{note}
