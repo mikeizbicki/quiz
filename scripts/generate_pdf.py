@@ -204,10 +204,13 @@ if __name__ == '__main__':
                 fail_llms = []
                 outputs_path = os.path.dirname(path) + '/.outputs/' + os.path.basename(path)
                 logging.debug(f"outputs_path={outputs_path}")
-                with open(outputs_path) as fin:
-                    ground_truth = normalize_text(fin.read())
-                    logging.debug(f"ground_truth={ground_truth}")
-                    answer_key.append(ground_truth)
+                try:
+                    with open(outputs_path) as fin:
+                        ground_truth = normalize_text(fin.read())
+                except FileNotFoundError:
+                    ground_truth = ''
+                logging.debug(f"ground_truth={ground_truth}")
+                answer_key.append(ground_truth)
                 for prompt_style in prompt_styles:
                     logging.debug(f"prompt_style={prompt_style}")
                     for llmpath in sorted(glob.glob(outputs_path + '.' + prompt_style + '.*')):
