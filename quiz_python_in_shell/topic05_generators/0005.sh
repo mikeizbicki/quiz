@@ -1,0 +1,14 @@
+cd; rm -rf quiz; mkdir quiz; cd quiz
+cat > foo.py <<EOF
+def g():
+    yield 1
+    yield 2
+    yield 3
+try:
+    it = g()
+    print('list(it)=', list(it))
+    print('sum(it)=', sum(it))
+except TypeError:
+    print('TypeError')
+EOF
+python3 foo.py
