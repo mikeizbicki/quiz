@@ -58,7 +58,6 @@ anthropic/claude-opus-4-8
 anthropic/claude-sonnet-5
 anthropic/claude-sonnet-4-6
 "
-models=''
 if [ "$2" = "allmodels" ]; then
     models="$models
 o1-mini
