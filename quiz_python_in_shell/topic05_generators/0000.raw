@@ -11,4 +11,4 @@ Generator functions return a generator object when called.
 The \texttt{next} function extracts the next yielded value from the generator object.
 If there are no more values to yield (i.e. the generator object is empty),
 then \texttt{next} raises \texttt{StopIteration}.
-
+Generator objects can be converted to lists using the \lstinline{list} function and they can be looped over using for loops.
