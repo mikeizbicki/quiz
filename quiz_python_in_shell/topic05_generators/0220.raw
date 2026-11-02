@@ -1,0 +1,18 @@
+\subsubsection*{3.2 For-loop Desugaring}
+
+\texttt{for x in c: body} is equivalent to:
+
+\begin{verbatim}
+it = iter(c)
+while True:
+    try:
+        x = next(it)
+    except StopIteration:
+        break
+    body
+\end{verbatim}
+
+This explains why \texttt{for} works on generators, lists, files, and
+instances of user classes alike: they all supply an \texttt{\_\_iter\_\_}
+method. It also explains why a one-shot iterator behaves differently
+from a re-iterable container when looped over twice.

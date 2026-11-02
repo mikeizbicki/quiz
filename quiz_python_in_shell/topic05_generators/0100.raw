@@ -1,0 +1,18 @@
+\subsection*{2. Laziness}
+
+A lazy consumer pulls values from an iterator only when needed. This
+section covers user-written wrappers (\texttt{take}), the built-in lazy
+consumers (\texttt{zip}, \texttt{map}, \texttt{filter},
+\texttt{enumerate}), the \texttt{itertools} module, and pipelines that
+chain them together.
+
+\subsubsection*{2.1 Take: Generator Wrapping a Generator}
+
+\texttt{take(g, n)} is a generator that pulls exactly \texttt{n} values
+from another generator \texttt{g}. Because both are generators, state
+(the position within \texttt{g}) is shared: consuming through
+\texttt{take} also advances \texttt{g}.
+
+If \texttt{g} runs out before \texttt{n} items are taken,
+\texttt{next(g)} raises \texttt{StopIteration}, which propagates out of
+\texttt{take}.

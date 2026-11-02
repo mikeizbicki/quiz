@@ -1,0 +1,14 @@
+\subsubsection*{2.2 Lazy Built-ins}
+
+\texttt{zip}, \texttt{map}, \texttt{filter}, and \texttt{enumerate}
+return lazy iterators, not lists. \texttt{zip} stops at the shortest
+input; \texttt{map} stops at the shortest input when given more than one
+iterable. All of them can be forced to a list with \texttt{list()}.
+
+Subtlety: when a generator is passed to two arguments of the same lazy
+consumer (e.g.\ \texttt{zip(g, g)}), each argument pulls from the same
+underlying iterator, so the two output positions are interleaved.
+
+\texttt{filter(None, xs)} keeps only truthy elements; \texttt{0},
+\texttt{''}, \texttt{[]}, \texttt{None}, and \texttt{False} are all
+dropped.

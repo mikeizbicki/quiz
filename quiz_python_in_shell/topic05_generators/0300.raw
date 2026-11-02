@@ -1,0 +1,14 @@
+\subsection*{4. Real-world Examples}
+
+Previous sections introduced the tools; this section applies them to
+familiar data structures.
+
+\subsubsection*{4.1 Range}
+
+Python's built-in \texttt{range} is re-iterable. A class-based
+\texttt{Range} with a generator-returning \texttt{\_\_iter\_\_} matches
+that behavior: each call to \texttt{iter(c)} produces a fresh
+generator, so the container can be looped over many times.
+
+Contrast with a class that stores a single generator instance: that
+class is one-shot, like the generator itself.

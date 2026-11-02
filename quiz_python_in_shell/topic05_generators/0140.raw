@@ -1,0 +1,16 @@
+\subsubsection*{2.3 itertools}
+
+The \texttt{itertools} module provides efficient lazy building blocks.
+
+\begin{itemize}
+  \item \texttt{count(start, step)} --- infinite arithmetic sequence.
+  \item \texttt{cycle(xs)} --- repeats \texttt{xs} forever.
+  \item \texttt{chain(a, b, \ldots)} --- yields items from each
+        iterable in turn.
+  \item \texttt{islice(it, stop)} or
+        \texttt{islice(it, start, stop, step)} --- slices a lazy
+        sequence like a list slice.
+\end{itemize}
+
+\texttt{count} and \texttt{cycle} are infinite; consume them with
+\texttt{islice}, or \texttt{list()} will raise \texttt{MemoryError}.
