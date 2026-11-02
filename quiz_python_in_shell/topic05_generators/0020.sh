@@ -9,7 +9,11 @@ try:
     it = nats()
     print('next(it)=', next(it))
     print('next(it)=', next(it))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

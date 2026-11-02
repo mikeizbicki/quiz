@@ -4,6 +4,10 @@ import itertools
 try:
     print('start')
     print('list=', list(itertools.cycle([1, 2, 3])))
+except TypeError:
+    print('TypeError')
+except StopIteration:
+    print('StopIteration')
 except MemoryError:
     print('MemoryError')
 EOF

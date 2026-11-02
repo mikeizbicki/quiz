@@ -10,7 +10,11 @@ def take(g, n):
 try:
     print('take2=', list(take(small(), 2)))
     print('take3=', list(take(small(), 3)))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

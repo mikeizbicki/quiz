@@ -6,5 +6,9 @@ try:
     print('sum=', sum(itertools.islice(itertools.cycle([4, 5]), 5)))
 except TypeError:
     print('TypeError')
+except StopIteration:
+    print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

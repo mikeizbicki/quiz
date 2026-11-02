@@ -10,5 +10,9 @@ try:
     print('again=', list(enumerate(it)))
 except TypeError:
     print('TypeError')
+except StopIteration:
+    print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

@@ -13,7 +13,11 @@ try:
     g = nats()
     print('take=', list(take(g, 3)))
     print('next(g)=', next(g))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

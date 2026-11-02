@@ -8,7 +8,11 @@ try:
     it = g()
     print('next(it)=', next(it))
     print('list(it)=', list(it))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

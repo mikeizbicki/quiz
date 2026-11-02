@@ -20,7 +20,11 @@ try:
     c = Countdown(3)
     print('sum1=', sum(c))
     print('sum2=', sum(c))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

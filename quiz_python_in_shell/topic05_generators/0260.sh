@@ -11,5 +11,9 @@ try:
     print('list=', list(itertools.islice(map(lambda x: 2 * x, fib()), 5)))
 except TypeError:
     print('TypeError')
+except StopIteration:
+    print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

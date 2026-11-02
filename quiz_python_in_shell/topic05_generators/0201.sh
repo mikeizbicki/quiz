@@ -16,7 +16,11 @@ try:
         sum += x
     print('sum=', sum)
     print('list=', list(Countdown(3)))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

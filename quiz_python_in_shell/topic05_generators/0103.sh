@@ -13,7 +13,11 @@ def take(g, n):
 try:
     print('list(t)=', list(take(nats(), 4)))
     print('sum(t)=', sum(take(nats(), 3)))
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

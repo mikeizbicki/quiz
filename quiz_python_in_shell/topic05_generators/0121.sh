@@ -12,5 +12,9 @@ try:
     print('zip3=', list(zip(it2, it2, it2)))
 except TypeError:
     print('TypeError')
+except StopIteration:
+    print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

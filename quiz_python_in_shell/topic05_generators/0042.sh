@@ -6,5 +6,9 @@ try:
     print('sum=', sum(y for x in xs for y in x))
 except TypeError:
     print('TypeError')
+except StopIteration:
+    print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

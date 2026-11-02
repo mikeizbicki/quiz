@@ -8,6 +8,10 @@ def nats():
 try:
     print('start')
     print('list=', list(map(lambda x: x * x, nats())))
+except TypeError:
+    print('TypeError')
+except StopIteration:
+    print('StopIteration')
 except MemoryError:
     print('MemoryError')
 EOF

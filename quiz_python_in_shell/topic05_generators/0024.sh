@@ -8,6 +8,10 @@ def nats():
 try:
     print('sum=', sum(nats()))
     print('list=', list(nats()))
+except TypeError:
+    print('TypeError')
+except StopIteration:
+    print('StopIteration')
 except MemoryError:
     print('MemoryError')
 EOF

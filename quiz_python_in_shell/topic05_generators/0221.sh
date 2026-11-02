@@ -25,7 +25,11 @@ try:
     print('iter(c1) is c1:', iter(c1) is c1)
     c2 = Countdown(3)
     print('iter(c2) is c2:', iter(c2) is c2)
+except TypeError:
+    print('TypeError')
 except StopIteration:
     print('StopIteration')
+except MemoryError:
+    print('MemoryError')
 EOF
 python3 foo.py

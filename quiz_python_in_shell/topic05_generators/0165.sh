@@ -8,6 +8,10 @@ def nats():
 try:
     print('start')
     print('list=', list(filter(lambda x: True, nats())))
+except TypeError:
+    print('TypeError')
+except StopIteration:
+    print('StopIteration')
 except MemoryError:
     print('MemoryError')
 EOF
