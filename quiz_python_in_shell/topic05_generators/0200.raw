@@ -23,3 +23,5 @@ except StopIteration:
 We can loop over the \lstinline{list}, \lstinline{range}, etc types because they implement the generator protocol.
 See PEP255 \url{https://peps.python.org/pep-0255/} for details.
 
+Any python object that implements the \lstinline{__iter__} dunder is called an \emph{iterable}.
+
