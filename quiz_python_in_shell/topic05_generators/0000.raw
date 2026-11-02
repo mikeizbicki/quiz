@@ -2,12 +2,11 @@
 \section*{Topic 5: Generators}
 \end{center}
 
-
 \subsection*{1. Yield Syntax}
 
 A function that contains \texttt{yield} is a \emph{generator function}.
 The \texttt{yield} is similar to \texttt{return},
-but we re-enter the function after using the value.
+but we can re-enter the function after using the value.
 Generator functions return a generator object when called.
 The \texttt{next} function extracts the next yielded value from the generator object.
 If there are no more values to yield (i.e. the generator object is empty),
