@@ -5,8 +5,12 @@ def g():
     yield 2
     yield 3
 try:
-    print('list(g())=', list(g()))
-    print('sum(g())=', sum(g()))
+    result = g()
+    x = next(result)
+    x = next(result)
+    print('x=', x)
+    result = g()
+    print('list=', list(result))
 except TypeError:
     print('TypeError')
 EOF

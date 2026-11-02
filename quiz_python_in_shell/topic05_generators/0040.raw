@@ -1,14 +1,6 @@
 \subsubsection*{1.3 Generator Comprehensions}
 
-A generator comprehension \texttt{(expr for x in xs)} is a concise
-generator expression. Like a generator function, it is lazy and
-one-shot: the same comprehension object can be iterated only once.
-
-The loop variable is captured by reference (late binding). If the
-comprehension references an outer variable that changes after the
-comprehension is built, the change is visible when the comprehension is
-consumed.
-
-Nested comprehensions \texttt{(y for x in xs for y in x)} flatten one
-level of structure, applying the inner \texttt{for} at each outer
-iteration.
+Generators can be constructed using the comprehension syntax just like lists.
+The advantage is that generators will consume $O(1)$ memory,
+but lists will consumer $O(n)$ memory.
+The disadvantage is that they can only be ``consumed" once.

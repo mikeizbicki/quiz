@@ -1,14 +1,6 @@
 \subsubsection*{1.2 Infinite Generators}
 
-Because generators produce values on demand, they can describe infinite
-sequences. A generator whose body is \texttt{while True: yield ...}
-never raises \texttt{StopIteration}.
-
-To use an infinite generator, consume it lazily: call \texttt{next()}
-for a finite number of values, or wrap it in a finite combinator such as
-\texttt{itertools.islice}. Calling \texttt{list()} on an infinite
-generator runs forever and raises \texttt{MemoryError}.
-
-Fibonacci numbers are the classic infinite generator: two state
-variables \texttt{a, b} are advanced on each iteration with the
-simultaneous assignment \texttt{a, b = b, a + b}.
+A generator which never raises \texttt{StopIteration} describes an infinite sequence.
+These infinite sequences cannot be represented as lists or other non-generator data structures.
+If you try to convert these infinite generators into a list,
+python will raise \texttt{MemoryError}.

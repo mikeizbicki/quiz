@@ -1,0 +1,9 @@
+\subsubsection*{2.4 Pipelines}
+
+Individual lazy tools compose into larger lazy pipelines. Each stage
+pulls from the stage before it, and \texttt{islice} or \texttt{take}
+terminates an otherwise infinite chain.
+
+Common shapes: \texttt{islice(map(f, xs), n)},
+\texttt{sum(islice(chain(a, b), n))}, \texttt{take(filter(p, xs), n)}.
+The same principles apply no matter how many stages the pipeline has.

@@ -1,23 +1,25 @@
 \subsection*{3. Desugaring and Dunders}
 
-Python's \texttt{for x in c} loop is sugar for calling \texttt{iter(c)}
-once, then \texttt{next()} repeatedly until \texttt{StopIteration}. A
-generator is a specialized iterator; a class can be its own iterator by
-defining \texttt{\_\_iter\_\_} and \texttt{\_\_next\_\_}.
+Python for loops are syntactic sugar over the iter/next functions.
+For example the for loop below
 
-\subsubsection*{3.1 Hand-written Countdown Class}
+\begin{lstlisting}
+for x in xs:
+    foo()
+\end{lstlisting}
 
-A class that models a countdown can implement the iterator protocol
-directly:
+gets converted into
 
-\begin{itemize}
-  \item \texttt{\_\_iter\_\_} returns \texttt{self} (or a fresh
-        iterator instance) so the class is iterable.
-  \item \texttt{\_\_next\_\_} returns the next value or raises
-        \texttt{StopIteration}.
-\end{itemize}
+\begin{lstlisting}
+it = iter(xs)
+try:
+    while True:
+        x = next(it)
+        foo()
+except StopIteration:
+    pass
+\end{lstlisting}
 
-If \texttt{\_\_iter\_\_} returns \texttt{self}, the class is one-shot
-like a generator: consuming it a second time gives an empty pass. If
-\texttt{\_\_iter\_\_} returns a fresh iterator each call, the class is
-re-iterable.
+We can loop over the \lstinline{list}, \lstinline{range}, etc types because they implement the generator protocol.
+See PEP255 \url{https://peps.python.org/pep-0255/} for details.
+

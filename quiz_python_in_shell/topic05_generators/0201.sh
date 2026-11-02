@@ -6,12 +6,17 @@ class Countdown:
     def __iter__(self):
         return self
     def __next__(self):
+        if self.i <= 0:
+            raise StopIteration
         self.i -= 1
         return self.i + 1
 try:
-    print('start')
+    sum = 0
+    for x in Countdown(3):
+        sum += x
+    print('sum=', sum)
     print('list=', list(Countdown(3)))
-except MemoryError:
-    print('MemoryError')
+except StopIteration:
+    print('StopIteration')
 EOF
 python3 foo.py

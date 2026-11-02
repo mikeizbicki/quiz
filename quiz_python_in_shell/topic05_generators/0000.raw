@@ -1,33 +1,15 @@
+\begin{center}
 \section*{Topic 5: Generators}
+\end{center}
 
-Each problem is worth 2 points (one point per printed line).
-
-Generators produce values on demand rather than all at once. This topic
-covers the \texttt{yield} syntax, generator comprehensions, lazy
-built-ins (\texttt{map}, \texttt{filter}, \texttt{zip},
-\texttt{enumerate}, \texttt{itertools}), hand-written iterator classes,
-and generator-based implementations of familiar containers.
 
 \subsection*{1. Yield Syntax}
 
 A function that contains \texttt{yield} is a \emph{generator function}.
-Calling it does not run the body; it returns a generator object. The
-body executes incrementally, yielding one value per \texttt{next()}
-call and raising \texttt{StopIteration} when the function returns.
-
-\subsubsection*{1.1 Basics}
-
-Key points:
-
-\begin{itemize}
-  \item A generator object can be iterated only once. A second
-        \texttt{list()} on the same object sees an empty sequence.
-  \item A missing \texttt{yield} makes the function return
-        \texttt{None}, so \texttt{list()} on the result raises
-        \texttt{TypeError}.
-  \item \texttt{return} inside a generator ends it early; subsequent
-        \texttt{yield}s are never reached.
-  \item \texttt{next()} on an exhausted generator raises
-        \texttt{StopIteration}.
-\end{itemize}
+The \texttt{yield} is similar to \texttt{return},
+but we re-enter the function after using the value.
+Generator functions return a generator object when called.
+The \texttt{next} function extracts the next yielded value from the generator object.
+If there are no more values to yield (i.e. the generator object is empty),
+then \texttt{next} raises \texttt{StopIteration}.
 

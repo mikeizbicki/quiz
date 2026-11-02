@@ -1,14 +1,13 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
 cat > foo.py <<EOF
-def nats():
-    i = 0
-    while True:
-        i += 1
-        yield i
+def g():
+    yield 1
+    yield 2
+    yield 3
 try:
-    it = nats()
+    it = g()
     print('next(it)=', next(it))
-    print('next(it)=', next(it))
+    print('list(it)=', list(it))
 except StopIteration:
     print('StopIteration')
 EOF

@@ -1,12 +1,9 @@
-\subsection*{2. Laziness}
+\subsection*{2. Gnerators that Modify Generators}
 
-A lazy consumer pulls values from an iterator only when needed. This
-section covers user-written wrappers (\texttt{take}), the built-in lazy
-consumers (\texttt{zip}, \texttt{map}, \texttt{filter},
-\texttt{enumerate}), the \texttt{itertools} module, and pipelines that
-chain them together.
+Many useful generators modify other generators
+(i.e. they take a generator as input).
 
-\subsubsection*{2.1 Take: Generator Wrapping a Generator}
+\subsubsection*{2.1 Writing a generator}
 
 \texttt{take(g, n)} is a generator that pulls exactly \texttt{n} values
 from another generator \texttt{g}. Because both are generators, state
