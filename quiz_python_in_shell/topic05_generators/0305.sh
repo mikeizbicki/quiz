@@ -8,7 +8,7 @@ class Range:
     def __iter__(self):
         i = self.start
         while i < self.stop:
-            yield i
+            return i
             i += self.step
 try:
     print('start')

@@ -6,7 +6,7 @@ def nats():
         yield i
         i += 1
 try:
-    print('start')
+    print('sum=', sum(nats()))
     print('list=', list(nats()))
 except MemoryError:
     print('MemoryError')
