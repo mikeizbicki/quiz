@@ -1,14 +1,9 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
 cat > foo.py <<EOF
-def g():
-    yield 1
-    yield 2
-    yield 3
-    yield 4
+xs = [0.0, '0', [], [0], None, 3, '', -1]
 try:
-    it = g()
-    print('sum(it)=', sum(it))
-    print('next(it)=', next(it))
+    print('filter=', list(filter(None, xs)))
+    print('count=', len(list(filter(None, xs))))
 except TypeError:
     print('TypeError')
 except StopIteration:
