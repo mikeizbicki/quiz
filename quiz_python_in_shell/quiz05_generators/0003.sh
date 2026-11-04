@@ -19,7 +19,7 @@ class Countdown:
 try:
     c = Countdown(3)
     print('a=', list(c))
-    print('b=', sum(Countdown(3)))
+    print('b=', sum(c))
 except TypeError:
     print('TypeError')
 except StopIteration:
