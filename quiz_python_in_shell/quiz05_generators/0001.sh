@@ -1,0 +1,23 @@
+cd; rm -rf quiz; mkdir quiz; cd quiz
+cat > foo.py <<EOF
+def nats():
+    i = 0
+    while True:
+        yield i
+        i += 1
+
+def take(g, n):
+    for _ in range(n):
+        yield next(g)
+try:
+    g = nats()
+    print('take=', list(take(g, 3)))
+    print('next(g)=', next(g))
+except TypeError:
+    print('TypeError')
+except StopIteration:
+    print('StopIteration')
+except MemoryError:
+    print('MemoryError')
+EOF
+python3 foo.py
