@@ -1,9 +1,10 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
 cat > foo.py <<EOF
-xs = [0.0, '0', [], [0], None, 3, '', -1]
+xs = [1, 2, 3]
 try:
-    print('filter=', list(filter(None, xs)))
-    print('count=', len(list(filter(None, xs))))
+    ys = map(lambda x: x * x, xs)
+    print('list=', list(ys))
+    print('len=', len(list(ys)))
 except TypeError:
     print('TypeError')
 except StopIteration:

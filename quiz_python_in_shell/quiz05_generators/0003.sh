@@ -18,7 +18,7 @@ class Countdown:
         return CountdownIter(self.n)
 try:
     c = Countdown(3)
-    print('a=', list(c), 'first=', next(iter(c)))
+    print('a=', list(c))
     print('b=', sum(Countdown(3)))
 except TypeError:
     print('TypeError')
