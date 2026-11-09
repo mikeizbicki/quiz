@@ -9,3 +9,7 @@ current directory do not match.
 Because \texttt{**} may match zero directories, \texttt{**/*.py} with
 \texttt{recursive=True} also matches \texttt{*.py} in the top directory.
 \end{note}
+\begin{note}
+This is called a \emph{recursive} search because internally \texttt{glob.glob} will search the files in the current directory, then recursively call itself on each of it subdirectories.
+Directories form a tree structure, and so this search has exactly the same format as the search you all are implementing in your tree homeworks.
+\end{note}
