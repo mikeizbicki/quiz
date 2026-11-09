@@ -4,8 +4,4 @@
 \texttt{glob.iglob} accepts exactly the same parameters as \texttt{glob.glob},
 but returns an iterator instead of a list.
 The set of matches is identical; only the type is different.
-An iterator supports \texttt{next} but not \texttt{len} and not indexing,
-and it is consumed as you read it.
-Therefore calling \texttt{list} on the same iterator twice
-gives a full list followed by an empty list.
 \end{note}
