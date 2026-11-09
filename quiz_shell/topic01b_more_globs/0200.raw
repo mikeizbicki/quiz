@@ -1,0 +1,11 @@
+\section{The globstar \texttt{**}}
+
+\begin{note}
+The pattern \texttt{**} matches \emph{zero or more} directories,
+but only when \texttt{recursive=True} is passed to \texttt{glob.glob}.
+Without that parameter \texttt{**} behaves exactly like \texttt{*},
+so \texttt{**/*.py} silently becomes \texttt{*/*.py} and files in the
+current directory do not match.
+Because \texttt{**} may match zero directories, \texttt{**/*.py} with
+\texttt{recursive=True} also matches \texttt{*.py} in the top directory.
+\end{note}

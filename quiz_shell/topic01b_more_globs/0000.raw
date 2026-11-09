@@ -1,0 +1,25 @@
+\begin{center}
+{
+\Large
+Review: More Globs
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+This is a review of the glob from topic01,
+plus three new features that are easy to get wrong:
+\texttt{glob.iglob} (a generator, not a list),
+the \emph{globstar} \texttt{**} (which does nothing special unless you ask for it),
+and the \texttt{.gitignore} pattern language (which is \emph{not} the shell glob).
+\end{note}
+
+\section{Quick review of the shell glob}
+
+\begin{note}
+Recall that the glob is expanded by the shell \emph{before} the program runs,
+that \texttt{*} matches any string including the empty string,
+that \texttt{?} matches exactly one character,
+that \texttt{[abc]} matches one character in the set and \texttt{[\textasciicircum abc]} one character not in the set,
+and that \texttt{*} never matches a leading dot.
+\end{note}
