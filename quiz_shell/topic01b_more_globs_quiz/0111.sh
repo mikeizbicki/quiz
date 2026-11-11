@@ -11,4 +11,15 @@ echo 'hei verden'       > germanic/README.no # norwegian
 echo 'ola mundo'        > romance/README.pt # portuguese
 echo 'bonjour le monde' > romance/README.fr # french
 echo 'saluton mondo'    > romance/README.epo # esperanto
-cat romance/* | grep -E '^h|^s' | wc -l
+cat > example.py <<EOF
+import glob
+import re
+count = 0
+for filepath in glob.glob('romance/*'):
+    with open(filepath) as f:
+        for line in f:
+            if re.search(r'o.*d', line):
+                count += 1
+print(count)
+EOF
+python example.py

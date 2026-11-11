@@ -11,4 +11,4 @@ echo 'hei verden'       > germanic/README.no # norwegian
 echo 'ola mundo'        > romance/README.pt # portuguese
 echo 'bonjour le monde' > romance/README.fr # french
 echo 'saluton mondo'    > romance/README.epo # esperanto
-cat *a*/README.?? | wc -l
+cat *a*/README.?? | grep -E '^h|^s' | wc -l
