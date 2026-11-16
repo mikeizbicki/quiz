@@ -1,10 +1,4 @@
-\begin{center}
-{
-\Large
-Shell Topic 02: Environment Variables
-}
-\vspace{0.1in}
-\end{center}
+\section {Environment Variables (review)}
 
 \begin{note}
 Environment variables are a special type of variable whose value gets passed to all children of the shell.

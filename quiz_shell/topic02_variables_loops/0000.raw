@@ -1,11 +1,12 @@
 \begin{center}
 {
 \Large
-Shell Topic 01: Basic Variable Usage
+Shell Topic: Variables and For Loops
 }
 \vspace{0.1in}
 \end{center}
 
+\section{Variables}
 \begin{note}
 Variables and quotation marks have subtle interactions in the shell,
 and these interactions are a common source of bugs.
