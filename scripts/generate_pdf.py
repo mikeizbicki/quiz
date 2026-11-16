@@ -244,7 +244,8 @@ if __name__ == '__main__':
                     frac = len(pass_llms) / (len(pass_llms) + len(fail_llms))
                 except ZeroDivisionError:
                     frac = 1.0
-                content.append(f'Fraction of LLMs with correct answer: {len(pass_llms)} / {len(pass_llms) + len(fail_llms)} = {frac:0.02f}')
+                if not args.noshell:
+                    content.append(f'Fraction of LLMs with correct answer: {len(pass_llms)} / {len(pass_llms) + len(fail_llms)} = {frac:0.02f}')
                 content.append(r'\vspace{0.5in}')
 
                 # look for any llms that we've seen before but were not in the current set of test cases;
@@ -270,8 +271,8 @@ if __name__ == '__main__':
     os.chdir(tempdir.name)
     logging.info(f"os.getcwd()={os.getcwd()}")
 
-# generate plot of scores
-    if not args.nographs:
+    # generate plot of scores
+    if not args.nographs and not args.noshell:
         import matplotlib.pyplot as plt
         percentages = {k: (v / total_problems) * 100 for k, v in passed_problems['1shot'].items()}
         import pprint
