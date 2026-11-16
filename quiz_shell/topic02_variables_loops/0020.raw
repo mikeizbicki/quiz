@@ -1,0 +1,5 @@
+\begin{note}
+Variables get expanded before determining the arguments to executables,
+and so if a variable has a space then it will result in multiple arguments.
+If a variable has newlines, those newlines will get removed if the variable is not quoted.
+\end{note}

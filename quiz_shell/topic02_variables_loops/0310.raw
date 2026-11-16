@@ -1,0 +1,4 @@
+\begin{note}
+Variables never get passed from children to their parents.
+For a script to set a variable, the script must be \emph{sourced}.
+\end{note}

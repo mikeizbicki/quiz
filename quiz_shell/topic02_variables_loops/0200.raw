@@ -1,0 +1,5 @@
+\begin{note}
+By default, variable expansion happens within heredocs.
+If the heredoc termination string is surrounded in single quotation marks,
+then variable substitution will not occur.
+\end{note}

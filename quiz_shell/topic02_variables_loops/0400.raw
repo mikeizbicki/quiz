@@ -1,0 +1,12 @@
+\begin{center}
+{
+\Large
+Shell Topic 03: For Loops
+}
+\vspace{0.1in}
+\end{center}
+
+\begin{note}
+The shell is a fully fledged programming environment with all of the procedural constructs that you are familiar with.
+For loops have subtle interactions with the \lstinline{$} operator and various types of quotation marks.
+\end{note}
