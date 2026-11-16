@@ -1,11 +1,9 @@
-\section{Globbing}
-
 \begin{note}
 After variable and command expansion, the shell expands glob patterns
-such as \lstinline{*} in any word that is not quoted.
+in any word that is not quoted.
 Single quotes \lstinline{'}, double quotes \lstinline{"}, and backslashes
 all suppress glob expansion.
 A backslash removes the special meaning of the character that follows it,
-so a backslash followed by a space (a ``backslash-space'') keeps the space
+so a backslash followed by a space keeps the space
 inside a single argument instead of splitting on it.
 \end{note}

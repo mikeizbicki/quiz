@@ -1,3 +1,3 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
 touch hello world
-ls *
+ls * | wc -l
