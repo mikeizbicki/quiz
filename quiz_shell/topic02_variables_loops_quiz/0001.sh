@@ -1,4 +1,3 @@
 cd; rm -rf quiz; mkdir quiz; cd quiz
-touch 'a b' c .d
-var='*'
-for f in "$var" $var; do echo "$f"; done
+for file in 'a b c' $(echo hello world) d "e f"; do touch $file; done
+ls | wc -l
